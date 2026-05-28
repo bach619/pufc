@@ -56,6 +56,7 @@
       "areaServed": { "@type": "City", "name": "Palangka Raya" }
     }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -69,6 +70,21 @@
             color: #1e2a1f;
             scroll-behavior: smooth;
             line-height: 1.5;
+        }
+
+        #particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #app-content {
+            position: relative;
+            z-index: 1;
         }
 
         ::-webkit-scrollbar {
@@ -657,6 +673,9 @@ border-bottom: 1px solid #f0e4e4;
 </head>
 <body>
 
+<div id="particles-bg"></div>
+<div id="app-content">
+
 <header class="navbar">
     <div class="nav-container">
         <div class="logo-area">
@@ -946,6 +965,8 @@ border-bottom: 1px solid #f0e4e4;
     <p style="font-size: 0.75rem; margin-top: 1rem;">Sekolah Sepakbola resmi binaan Pemkot Palangka Raya</p>
 </footer>
 
+</div>
+
 <script>
     const mobileBtn = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
@@ -991,6 +1012,116 @@ border-bottom: 1px solid #f0e4e4;
             }
         });
     });
+
+    // ─── tsParticles Background: Soccer Balls ────────────────────────────
+    if (typeof tsParticles !== 'undefined') {
+        console.log('[Particles] Initializing soccer ball background...');
+        tsParticles.load({
+            id: 'particles-bg',
+            options: {
+                fullScreen: false,
+                detectRetina: true,
+                fpsLimit: 60,
+                particles: {
+                    number: {
+                        value: 20,
+                        density: { enable: true, width: 1920, height: 1080 },
+                    },
+                    shape: {
+                        type: 'image',
+                        image: {
+                            src: '/asset/soccer-ball.svg',
+                            width: 100,
+                            height: 100,
+                        },
+                    },
+                    size: {
+                        value: { min: 28, max: 72 },
+                        animation: {
+                            enable: true,
+                            speed: 2,
+                            minimumValue: 20,
+                            sync: false,
+                        },
+                    },
+                    opacity: {
+                        value: 0.18,
+                        animation: {
+                            enable: true,
+                            speed: 0.5,
+                            minimumValue: 0.08,
+                            sync: false,
+                        },
+                    },
+                    move: {
+                        enable: true,
+                        speed: 0.6,
+                        direction: 'none',
+                        random: true,
+                        straight: false,
+                        outModes: { default: 'bounce' },
+                    },
+                    rotate: {
+                        value: { min: 0, max: 360 },
+                        animation: {
+                            enable: true,
+                            speed: 1.2,
+                            sync: false,
+                        },
+                    },
+                    collisions: {
+                        enable: true,
+                        mode: 'bounce',
+                    },
+                    wobble: {
+                        enable: true,
+                        distance: 8,
+                        speed: 4,
+                    },
+                },
+                interactivity: {
+                    detectsOn: 'window',
+                    events: {
+                        onHover: {
+                            enable: true,
+                            mode: 'repulse',
+                        },
+                        resize: { enable: true },
+                    },
+                    modes: {
+                        repulse: {
+                            distance: 120,
+                            duration: 0.4,
+                            speed: 1,
+                        },
+                    },
+                },
+                background: {
+                    color: 'transparent',
+                },
+                responsive: [
+                    {
+                        maxWidth: 768,
+                        options: {
+                            particles: {
+                                number: { value: 8 },
+                                size: { value: { min: 20, max: 45 } },
+                                move: { speed: 0.4 },
+                                opacity: { value: 0.12 },
+                                rotate: { animation: { speed: 0.8 } },
+                                wobble: { enable: false },
+                            },
+                            interactivity: {
+                                events: {
+                                    onHover: { enable: false },
+                                },
+                            },
+                        },
+                    },
+                ],
+            },
+        })
+    }
 </script>
 </body>
 </html>
