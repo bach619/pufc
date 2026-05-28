@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -12,6 +14,8 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <div className="font-sans bg-[#f9fbf7] text-text-dark min-h-screen">
+      <Analytics />
+      <SpeedInsights />
       <Navbar />
       <main>
         <Hero />
