@@ -2,12 +2,12 @@
 
 /* Design Tokens */
 @theme {
-  --color-green-primary: #2e7d32;
-  --color-green-dark: #1b5e20;
+  --color-red-primary: #d32f2f;
+  --color-red-dark: #b71c1c;
   --color-orange-accent: #f57c00;
   --color-orange-hover: #ef6c00;
   --color-cream-bg: #fefaf0;
-  --color-gray-light: #f0f2ed;
+  --color-gray-light: #f5f0f0;
   --color-text-dark: #1e2a1f;
   --color-wa: #25d366;
   --color-wa-hover: #128c7e;
@@ -16,8 +16,8 @@
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #e0e7e0; }
-::-webkit-scrollbar-thumb { background: #2e7d32; border-radius: 10px; }
+::-webkit-scrollbar-track { background: #f0e0e0; }
+::-webkit-scrollbar-thumb { background: #d32f2f; border-radius: 10px; }
 
 /* Smooth scroll */
 html { scroll-behavior: smooth; }
@@ -28,7 +28,7 @@ html { scroll-behavior: smooth; }
   .schedule-table tbody tr {
     display: block;
     padding: 1rem;
-    border-bottom: 2px solid #e0eede;
+    border-bottom: 2px solid #eedede;
   }
   .schedule-table tbody td {
     display: flex;
@@ -41,7 +41,7 @@ html { scroll-behavior: smooth; }
     content: attr(data-label);
     font-weight: 700;
     font-size: 0.8rem;
-    color: #5a6e55;
+    color: #6e5555;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }

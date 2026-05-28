@@ -58,7 +58,7 @@ export default function Registration() {
   return (
     <section id="registration" className="bg-[#eef5e9] rounded-[48px] sm:rounded-[48px] px-4 sm:px-8 py-12 sm:py-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-green-dark mb-4">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-red-dark mb-4">
           Formulir <span className="text-orange-accent">Pendaftaran</span>
         </h2>
         <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-10">
@@ -172,7 +172,7 @@ export default function Registration() {
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-green-primary to-green-dark text-white font-bold py-4 px-6 rounded-2xl text-base cursor-pointer hover:from-green-dark hover:to-[#0f3d13] hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(27,94,32,0.3)] active:translate-y-0 transition-all mt-2 tracking-wide"
+              className="w-full bg-gradient-to-r from-red-primary to-red-dark text-white font-bold py-4 px-6 rounded-2xl text-base cursor-pointer hover:from-red-dark hover:to-[#7f0000] hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(183,28,28,0.3)] active:translate-y-0 transition-all mt-2 tracking-wide"
             >
               <i className="fas fa-paper-plane mr-2"></i> Kirim Pendaftaran
             </button>

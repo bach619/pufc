@@ -1,18 +1,11 @@
 export default function Contact() {
   return (
     <section id="contact" className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-green-dark mb-4">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-red-dark mb-4">
         Hubungi <span className="text-orange-accent">Kami</span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-        <div className="bg-white p-6 rounded-3xl text-center shadow-[0_4px_10px_rgba(0,0,0,0.03)] border border-[#e2eedb]">
-          <i className="fas fa-phone-alt text-3xl text-orange-accent mb-3 inline-block"></i>
-          <h3 className="font-semibold text-lg mb-2">Telepon</h3>
-          <p>+62 853 1234 5678</p>
-          <p className="text-sm text-[#5a6e55]">(Kantor SSB)</p>
-        </div>
-
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
         <div className="bg-white p-6 rounded-3xl text-center shadow-[0_4px_10px_rgba(0,0,0,0.03)] border border-[#e2eedb]">
           <i className="fab fa-whatsapp text-3xl text-orange-accent mb-3 inline-block"></i>
           <h3 className="font-semibold text-lg mb-2">WhatsApp Center</h3>

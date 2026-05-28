@@ -1,8 +1,8 @@
-# SSB Palangka Raya United FC
+# SSB Palangka Raya United Football Club
 
 > **Akademi Sepakbola Muda — Cetak Bintang Lapangan Sejak Dini**
 
-Situs web resmi **Sekolah Sepakbola (SSB) Palangka Raya United Club**, sebuah akademi sepakbola muda yang berlokasi di Stadion Sanaman Mantikei, Palangka Raya, Kalimantan Tengah.
+Situs web resmi **Sekolah Sepakbola (SSB) Palangka Raya United Football Club**, sebuah akademi sepakbola muda yang berlokasi di Stadion Sanaman Mantikei, Palangka Raya, Kalimantan Tengah.
 
 ## Daftar Isi
 
@@ -19,7 +19,7 @@ Situs web resmi **Sekolah Sepakbola (SSB) Palangka Raya United Club**, sebuah ak
 
 ## Tentang Project
 
-SSB Palangka Raya United FC adalah platform informasi dan pendaftaran online untuk akademi sepakbola muda. Project ini bertujuan untuk:
+SSB Palangka Raya United Football Club adalah platform informasi dan pendaftaran online untuk akademi sepakbola muda. Project ini bertujuan untuk:
 
 - Menyediakan informasi profil akademi, program latihan, dan jadwal
 - Mempermudah calon siswa mendaftar melalui form online yang terintegrasi WhatsApp
@@ -192,7 +192,7 @@ Gaya kode mengikuti konvensi:
 
 ## Lisensi
 
-Hak cipta &copy; 2026 **SSB Palangka Raya United Club**.
+Hak cipta &copy; 2026 **SSB Palangka Raya United Football Club**.
 
 Dibuat untuk keperluan promosi dan pendaftaran akademi sepakbola. Tidak untuk digunakan secara komersial tanpa izin.
 

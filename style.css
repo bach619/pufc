@@ -16,20 +16,20 @@ body {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #e0e7e0;
+    background: #f0e0e0;
 }
 ::-webkit-scrollbar-thumb {
-    background: #2e7d32;
+    background: #d32f2f;
     border-radius: 10px;
 }
 
 :root {
-    --green-primary: #2e7d32;
-    --green-dark: #1b5e20;
+    --red-primary: #d32f2f;
+    --red-dark: #b71c1c;
     --orange-accent: #f57c00;
     --orange-hover: #ef6c00;
     --cream-bg: #fefaf0;
-    --gray-light: #f0f2ed;
+    --gray-light: #f5f0f0;
     --text-dark: #1e2a1f;
 }
 
@@ -83,7 +83,7 @@ body {
 .nav-links li a {
     text-decoration: none;
     font-weight: 600;
-    color: #2c3a2b;
+    color: #3a2b2b;
     transition: 0.2s;
     font-size: 1rem;
 }
@@ -92,27 +92,27 @@ body {
 }
 .btn-outline {
     background: transparent;
-    border: 2px solid var(--green-primary);
+    border: 2px solid var(--red-primary);
     padding: 0.45rem 1.2rem;
     border-radius: 40px;
     font-weight: 700;
-    color: var(--green-primary);
+    color: var(--red-primary);
     transition: 0.2s;
 }
 .btn-outline:hover {
-    background: var(--green-primary);
+    background: var(--red-primary);
     color: white;
-    border-color: var(--green-primary);
+    border-color: var(--red-primary);
 }
 .mobile-menu {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: var(--green-primary);
+    color: var(--red-primary);
 }
 
 .hero {
-    background: linear-gradient(105deg, #eef5e9 0%, #dce9d4 100%);
+    background: linear-gradient(105deg, #fef2f2 0%, #fee2e2 100%);
     padding: 3rem 2rem;
     position: relative;
     overflow: hidden;
@@ -141,14 +141,14 @@ body {
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 800;
-    color: var(--green-dark);
+    color: var(--red-dark);
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #2e4a2b;
+    color: #4a2b2b;
 }
 .btn-primary {
     background: var(--orange-accent);
@@ -187,12 +187,12 @@ body {
     font-weight: 800;
     text-align: center;
     margin-bottom: 1rem;
-    color: var(--green-dark);
+    color: var(--red-dark);
     position: relative;
 }
 .section-sub {
     text-align: center;
-    color: #5a6e55;
+    color: #6e5555;
     max-width: 700px;
     margin: 0 auto 3rem auto;
 }
@@ -208,12 +208,12 @@ body {
     padding: 1.8rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.25s ease;
-    border: 1px solid #e2f0dc;
+    border: 1px solid #f0dcdc;
     text-align: center;
 }
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 30px -12px rgba(46,125,50,0.2);
+    box-shadow: 0 20px 30px -12px rgba(211,47,47,0.2);
 }
 .card i {
     font-size: 2.6rem;
@@ -241,7 +241,7 @@ body {
     font-size: 0.95rem;
 }
 .schedule-table thead {
-    background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+    background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
 }
 .schedule-table thead th {
     color: white;
@@ -253,14 +253,14 @@ body {
     text-align: left;
 }
 .schedule-table tbody tr {
-    border-bottom: 1px solid #e8f0e4;
+    border-bottom: 1px solid #f0e4e4;
     transition: background 0.15s;
 }
 .schedule-table tbody tr:last-child {
     border-bottom: none;
 }
 .schedule-table tbody tr:hover {
-    background: #f5faf2;
+    background: #faf2f2;
 }
 .schedule-table tbody td {
     padding: 1rem 1.2rem;
@@ -277,22 +277,22 @@ body {
     text-align: center;
 }
 .day-badge.rabu {
-    background: #2e7d32;
+    background: #d32f2f;
 }
 .day-badge.jumat {
     background: #f57c00;
 }
 .day-badge.minggu {
-    background: #1b5e20;
+    background: #b71c1c;
 }
 .sched-age {
     font-size: 0.8rem;
-    color: #7a8f75;
+    color: #8f7575;
 }
 .sched-time {
     font-weight: 700;
-    color: var(--green-primary);
-    background: #edf7ea;
+    color: var(--red-primary);
+    background: #f7eaea;
     padding: 0.25rem 0.9rem;
     border-radius: 40px;
     display: inline-block;
@@ -301,7 +301,7 @@ body {
 }
 .sched-material {
     font-weight: 600;
-    color: #2c3a2b;
+    color: #3a2b2b;
 }
 
 @media (max-width: 600px) {
@@ -311,7 +311,7 @@ body {
     .schedule-table tbody tr {
         display: block;
         padding: 1rem;
-        border-bottom: 2px solid #e0eede;
+        border-bottom: 2px solid #eedede;
     }
     .schedule-table tbody td {
         display: flex;
@@ -324,7 +324,7 @@ body {
         content: attr(data-label);
         font-weight: 700;
         font-size: 0.8rem;
-        color: #5a6e55;
+        color: #6e5555;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
@@ -365,7 +365,7 @@ body {
 .form-group input, .form-group select, .form-group textarea {
     width: 100%;
     padding: 0.85rem 1.1rem;
-    border: 1.5px solid #cfdfc8;
+    border: 1.5px solid #e8d0d0;
     border-radius: 16px;
     font-family: inherit;
     font-size: 0.95rem;
@@ -382,7 +382,7 @@ body {
     min-height: 80px;
 }
 button[type="submit"] {
-    background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+    background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
     border: none;
     width: 100%;
     padding: 1rem;
@@ -396,9 +396,9 @@ button[type="submit"] {
     margin-top: 0.5rem;
 }
 button[type="submit"]:hover {
-    background: linear-gradient(135deg, var(--green-dark), #0f3d13);
+    background: linear-gradient(135deg, var(--red-dark), #7f0000);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(27,94,32,0.3);
+    box-shadow: 0 8px 20px rgba(183,28,28,0.3);
 }
 button[type="submit"]:active {
     transform: translateY(0);
@@ -407,7 +407,7 @@ button[type="submit"]:active {
     font-size: 0.8rem;
     margin-top: 1rem;
     text-align: center;
-    color: #7a8f75;
+    color: #8f7575;
 }
 .contact-grid {
     display: grid;
@@ -429,15 +429,15 @@ button[type="submit"]:active {
     margin-bottom: 0.8rem;
 }
 .map-placeholder {
-    background: #d9e3d4;
+    background: #f0e0e0;
     border-radius: 28px;
     overflow: hidden;
     height: 280px;
     margin-top: 1rem;
 }
 .footer {
-    background: #1c2e1a;
-    color: #cfdfc8;
+    background: #2c1a1a;
+    color: #e8d0d0;
     padding: 2rem;
     text-align: center;
     margin-top: 3rem;
@@ -488,7 +488,7 @@ button[type="submit"]:active {
 }
 
 .form-section {
-    background: #eef5e9;
+    background: #fef2f2;
     border-radius: 48px;
     padding: 3rem 2rem 4rem;
 }

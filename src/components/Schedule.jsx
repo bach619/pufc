@@ -23,15 +23,15 @@ const scheduleData = [
 ]
 
 const badgeColors = {
-  rabu: 'bg-green-primary',
+  rabu: 'bg-red-primary',
   jumat: 'bg-orange-accent',
-  minggu: 'bg-green-dark',
+  minggu: 'bg-red-dark',
 }
 
 export default function Schedule() {
   return (
     <section id="schedule" className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-green-dark mb-4">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-red-dark mb-4">
         Jadwal <span className="text-orange-accent">Latihan</span>
       </h2>
       <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-8">
@@ -50,7 +50,7 @@ export default function Schedule() {
       <div className="overflow-x-auto rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
         <table className="schedule-table w-full border-collapse bg-white rounded-2xl overflow-hidden text-sm">
           <thead>
-            <tr className="bg-gradient-to-r from-green-primary to-green-dark">
+            <tr className="bg-gradient-to-r from-red-primary to-red-dark">
               <th className="text-white font-bold text-xs uppercase tracking-wider px-5 py-4 text-left">Hari</th>
               <th className="text-white font-bold text-xs uppercase tracking-wider px-5 py-4 text-left">Kelompok Usia</th>
               <th className="text-white font-bold text-xs uppercase tracking-wider px-5 py-4 text-left">Waktu</th>
@@ -69,7 +69,7 @@ export default function Schedule() {
                   {s.group} <span className="text-xs text-[#7a8f75]">(semua kelompok)</span>
                 </td>
                 <td data-label="Waktu" className="px-5 py-4 align-middle">
-                  <span className="font-bold text-green-primary bg-[#edf7ea] px-3.5 py-1 rounded-full text-sm whitespace-nowrap">
+                  <span className="font-bold text-red-primary bg-[#edf7ea] px-3.5 py-1 rounded-full text-sm whitespace-nowrap">
                     {s.time}
                   </span>
                 </td>

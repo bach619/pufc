@@ -11,7 +11,7 @@ export default function Footer() {
       </div>
       <p><i className="fas fa-futbol mr-1"></i> Membangun generasi sepakbola berkarakter & berprestasi.</p>
       <p className="mt-3">
-        &copy; 2026 SSB Palangka Raya United Club |{' '}
+        &copy; 2026 SSB Palangka Raya United Football Club |{' '}
         <a
           href="#home"
           onClick={(e) => {

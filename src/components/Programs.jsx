@@ -23,7 +23,7 @@ export default function Programs() {
       className="bg-gray-light rounded-t-[48px] sm:rounded-t-[48px] px-4 sm:px-8 py-16 sm:py-20"
     >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-green-dark mb-4">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-red-dark mb-4">
           Program <span className="text-orange-accent">Latihan</span>
         </h2>
         <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-12">

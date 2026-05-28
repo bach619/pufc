@@ -19,8 +19,8 @@ const aboutCards = [
 export default function About() {
   return (
     <section id="about" className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-green-dark mb-4">
-        Tentang <span className="text-orange-accent">SSB PR United</span>
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-red-dark mb-4">
+        Tentang <span className="text-orange-accent">SSB PUFC</span>
       </h2>
       <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-12">
         Didirikan dengan visi membina generasi emas sepakbola Palangka Raya, mengedepankan karakter dan skill.

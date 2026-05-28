@@ -33,14 +33,14 @@ export default function Navbar() {
             className="h-[55px] w-auto rounded-xl bg-white p-1 shadow-sm object-contain"
           />
           <div className="leading-tight">
-            <span className="font-extrabold text-lg text-green-dark block">PALANGKA RAYA</span>
+            <span className="font-extrabold text-lg text-red-dark block">PALANGKA RAYA</span>
             <span className="text-sm font-medium text-orange-accent block">UNITED CLUB</span>
           </div>
         </a>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-3xl text-green-primary cursor-pointer"
+          className="md:hidden text-3xl text-red-primary cursor-pointer"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -68,7 +68,7 @@ export default function Navbar() {
             <a
               href="#registration"
               onClick={(e) => handleNav(e, '#registration')}
-              className="inline-block border-2 border-green-primary text-green-primary font-bold px-5 py-1.5 rounded-full hover:bg-green-primary hover:text-white transition-colors no-underline"
+              className="inline-block border-2 border-red-primary text-red-primary font-bold px-5 py-1.5 rounded-full hover:bg-red-primary hover:text-white transition-colors no-underline"
             >
               Join Now
             </a>
