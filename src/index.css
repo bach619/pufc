@@ -19,8 +19,11 @@
 ::-webkit-scrollbar-track { background: #f0e0e0; }
 ::-webkit-scrollbar-thumb { background: #d32f2f; border-radius: 10px; }
 
-/* Smooth scroll */
-html { scroll-behavior: smooth; }
+/* Smooth scroll + offset for sticky navbar (~80px) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
 /* Schedule table responsive */
 @media (max-width: 640px) {

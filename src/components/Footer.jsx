@@ -27,12 +27,11 @@ export default function Footer() {
         <p className="mt-5 text-sm">
           &copy; 2026 SSB Palangka Raya United Football Club |developed by Boby Mihing{' '}
           <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault()
-              const target = document.querySelector('#home')
-              if (target) target.scrollIntoView({ behavior: 'smooth' })
-            }}
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault()
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
             className="text-[#ffb74d] no-underline hover:underline"
           >
             Kembali ke Atas

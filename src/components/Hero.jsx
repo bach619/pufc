@@ -18,7 +18,10 @@ export default function Hero() {
               onClick={(e) => {
                 e.preventDefault()
                 const target = document.querySelector('#registration')
-                if (target) target.scrollIntoView({ behavior: 'smooth' })
+                if (target) {
+                  const top = target.getBoundingClientRect().top + window.scrollY - 90
+                  window.scrollTo({ top, behavior: 'smooth' })
+                }
               }}
               className="inline-flex items-center gap-2 bg-orange-accent text-white font-bold px-8 py-3 rounded-full shadow-md hover:bg-orange-hover hover:-translate-y-0.5 transition-all no-underline"
             >
@@ -29,7 +32,10 @@ export default function Hero() {
               onClick={(e) => {
                 e.preventDefault()
                 const target = document.querySelector('#about')
-                if (target) target.scrollIntoView({ behavior: 'smooth' })
+                if (target) {
+                  const top = target.getBoundingClientRect().top + window.scrollY - 90
+                  window.scrollTo({ top, behavior: 'smooth' })
+                }
               }}
               className="font-semibold text-red-dark hover:text-orange-accent transition-colors no-underline"
             >

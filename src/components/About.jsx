@@ -65,7 +65,10 @@ export default function About() {
           onClick={(e) => {
             e.preventDefault()
             const target = document.querySelector('#legal-docs')
-            if (target) target.scrollIntoView({ behavior: 'smooth' })
+            if (target) {
+              const top = target.getBoundingClientRect().top + window.scrollY - 90
+              window.scrollTo({ top, behavior: 'smooth' })
+            }
           }}
           className="text-sm font-semibold text-orange-accent hover:text-orange-hover underline underline-offset-2 whitespace-nowrap"
         >

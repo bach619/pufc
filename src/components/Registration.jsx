@@ -56,7 +56,7 @@ export default function Registration() {
   }
 
   return (
-    <section id="registration" className="bg-[#eef5e9] rounded-[48px] sm:rounded-[48px] px-4 sm:px-8 py-12 sm:py-16">
+    <section id="registration" className="bg-[#eef5e9] rounded-[48px] sm:rounded-[48px] px-4 sm:px-8 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-red-dark mb-4">
           Formulir <span className="text-orange-accent">Pendaftaran</span>

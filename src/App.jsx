@@ -7,6 +7,7 @@ import About from './components/About'
 import Coaches from './components/Coaches'
 import LegalDocs from './components/LegalDocs'
 import Programs from './components/Programs'
+import Gallery from './components/Gallery'
 import Schedule from './components/Schedule'
 import Registration from './components/Registration'
 import Contact from './components/Contact'
@@ -26,6 +27,7 @@ export default function App() {
           <Coaches />
           <LegalDocs />
           <Programs />
+          <Gallery />
           <Schedule />
           <Registration />
           <Contact />

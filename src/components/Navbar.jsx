@@ -3,12 +3,15 @@ import { useState } from 'react'
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
+  const NAVBAR_HEIGHT = 90
+
   const handleNav = (e, id) => {
     e.preventDefault()
     setOpen(false)
     const target = document.querySelector(id)
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const top = target.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT
+      window.scrollTo({ top, behavior: 'smooth' })
       history.pushState(null, null, id)
     }
   }
@@ -18,6 +21,7 @@ export default function Navbar() {
     { href: '#about', label: 'Tentang' },
     { href: '#coaches', label: 'Pelatih' },
     { href: '#programs', label: 'Program' },
+    { href: '#gallery', label: 'Galeri' },
     { href: '#schedule', label: 'Jadwal' },
     { href: '#registration', label: 'Daftar' },
     { href: '#contact', label: 'Kontak' },

@@ -45,7 +45,7 @@ Project tersedia dalam **dua versi**:
 | **Hero** | Banner utama dengan ajakan mendaftar dan ilustrasi latihan. |
 | **Tentang** | Tiga pilar akademi: prestasi & pembinaan, pelatih lisensi, karakter juara. Dilengkapi kutipan pelatih kepala. |
 | **Program Latihan** | Tiga kelompok usia: Cilik (6–9 thn), Junior (10–13 thn), Remaja (14–17 thn). |
-| **Jadwal Latihan** | Tabel jadwal (Rabu, Jumat, Minggu pukul 14.30 WIB) dengan badge warna. Responsif — berubah menjadi *card-style* di layar kecil. |
+| **JadualLatihan** | Tabel Jadual(Rabu, Jumat, Minggu pukul 14.30 WIB) dengan badge warna. Responsif — berubah menjadi *card-style* di layar kecil. |
 | **Form Pendaftaran** | Formulir online (nama, usia, program, posisi, email, WhatsApp, catatan) yang terkirim langsung ke admin via WhatsApp. |
 | **Kontak & Lokasi** | Info telepon, WhatsApp center, alamat Stadion Sanaman Mantikei, dan Google Maps *embed*. |
 | **Footer** | Logo, motto, copyright, dan tautan kembali ke atas. |
@@ -95,7 +95,7 @@ pufc/
 │   │   ├── About.jsx       # Tentang akademi
 │   │   ├── LegalDocs.jsx   # Dokumen legalitas (accordion)
 │   │   ├── Programs.jsx    # Program latihan
-│   │   ├── Schedule.jsx    # Jadwal latihan
+│   │   ├── Schedule.jsx    # Jaduallatihan
 │   │   ├── Registration.jsx# Form pendaftaran
 │   │   ├── Contact.jsx     # Kontak & lokasi
 │   │   └── Footer.jsx      # Footer
