@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Design Tokens */
+@theme {
+  --color-green-primary: #2e7d32;
+  --color-green-dark: #1b5e20;
+  --color-orange-accent: #f57c00;
+  --color-orange-hover: #ef6c00;
+  --color-cream-bg: #fefaf0;
+  --color-gray-light: #f0f2ed;
+  --color-text-dark: #1e2a1f;
+  --color-wa: #25d366;
+  --color-wa-hover: #128c7e;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #e0e7e0; }
+::-webkit-scrollbar-thumb { background: #2e7d32; border-radius: 10px; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Schedule table responsive */
+@media (max-width: 640px) {
+  .schedule-table thead { display: none; }
+  .schedule-table tbody tr {
+    display: block;
+    padding: 1rem;
+    border-bottom: 2px solid #e0eede;
+  }
+  .schedule-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    border: none;
+  }
+  .schedule-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #5a6e55;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
