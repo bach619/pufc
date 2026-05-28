@@ -3,11 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>SSB Palangka Raya United Football Club | Akademi Sepakbola Muda</title>
+    <title>SSB Palangka Raya United FC | Akademi Sepakbola Muda Palangka Raya</title>
+    <meta name="description" content="SSB Palangka Raya United Football Club — akademi sepakbola anak usia 6-17 tahun di Palangka Raya, Kalimantan Tengah. Daftar sekarang! Latihan di Stadion Sanaman Mantikei.">
+    <meta name="keywords" content="SSB Palangka Raya, akademi sepakbola Palangka Raya, sekolah sepakbola Kalimantan Tengah, PR United FC, sepakbola anak Palangka Raya, latihan sepakbola Palangkaraya">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SSB Palangka Raya United Football Club">
+    <meta name="geo.region" content="ID-KT">
+    <meta name="geo.placename" content="Palangka Raya">
+    <link rel="canonical" href="https://ssb-palangkaraya-united.vercel.app/">
     <link rel="icon" type="image/x-icon" href="asset/favicon.ico">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SSB Palangka Raya United FC | Akademi Sepakbola Muda">
+    <meta property="og:description" content="Akademi sepakbola untuk usia 6-17 tahun di Palangka Raya. Latihan di Stadion Sanaman Mantikei.">
+    <meta property="og:image" content="https://ssb-palangkaraya-united.vercel.app/asset/hero.webp">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="SSB Palangka Raya United FC">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SSB Palangka Raya United FC | Akademi Sepakbola Muda">
+    <meta name="twitter:description" content="Akademi sepakbola untuk usia 6-17 tahun di Palangka Raya. Latihan di Stadion Sanaman Mantikei.">
+    <meta name="twitter:image" content="https://ssb-palangkaraya-united.vercel.app/asset/hero.webp">
     <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "SSB Palangka Raya United Football Club",
+      "alternateName": "PR United FC",
+      "description": "Akademi sepakbola muda untuk usia 6-17 tahun di Palangka Raya, Kalimantan Tengah.",
+      "url": "https://ssb-palangkaraya-united.vercel.app/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Stadion Sanaman Mantikei, Jalan Ahmad Yani",
+        "addressLocality": "Palangka Raya",
+        "addressRegion": "Kalimantan Tengah",
+        "addressCountry": "ID"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-822-5669-3226",
+        "contactType": "customer service"
+      },
+      "sport": "Soccer",
+      "areaServed": { "@type": "City", "name": "Palangka Raya" }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -447,6 +491,66 @@ border-bottom: 1px solid #f0e4e4;
             font-weight: 600;
             border-left: 6px solid var(--orange-accent);
         }
+        .coach-card-head {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2f0dc;
+            text-align: center;
+            max-width: 360px;
+            margin: 0 auto;
+            transition: all 0.25s ease;
+        }
+        .coach-card-head:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(46,125,50,0.2);
+        }
+        .coach-avatar-head {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .coach-avatar-head i {
+            font-size: 2.5rem;
+            color: #ffd966;
+            background: none;
+            padding: 0;
+        }
+        .coach-badge-head {
+            display: inline-block;
+            background: var(--orange-accent);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            margin-top: 0.5rem;
+        }
+        .coach-avatar {
+            width: 80px;
+            height: 80px;
+            background: #fff1e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .coach-avatar i {
+            font-size: 2rem;
+            color: var(--orange-accent);
+            background: none;
+            padding: 0;
+        }
         .programs-section {
             background: var(--gray-light);
             border-radius: 48px 48px 0 0;
@@ -563,6 +667,7 @@ border-bottom: 1px solid #f0e4e4;
         <ul class="nav-links" id="nav-links">
             <li><a href="#home">Beranda</a></li>
             <li><a href="#about">Tentang</a></li>
+            <li><a href="#coaches">Pelatih</a></li>
             <li><a href="#programs">Program</a></li>
             <li><a href="#schedule">Jadwal</a></li>
             <li><a href="#registration">Daftar</a></li>
@@ -611,7 +716,69 @@ border-bottom: 1px solid #f0e4e4;
         <div style="margin-top: 2.5rem; background: #edf7ea; border-radius: 32px; padding: 1.8rem; text-align: center;">
             <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--orange-accent); opacity: 0.6;"></i>
             <p style="font-style: italic; max-width: 800px; margin: 0 auto;">"Sepakbola bukan hanya soal menang, tapi juga membangun masa depan anak-anak kita. Di PR United, setiap anak adalah pemain inti."</p>
-            <p style="margin-top: 0.8rem; font-weight: 700;">— Pelatih Kepala, Coach Prabu</p>
+            <p style="margin-top: 0.8rem; font-weight: 700;">— Pelatih Kepala, Sugianto</p>
+        </div>
+    </section>
+
+    <section id="coaches" class="section">
+        <h2 class="section-title">Pelatih <span style="color: var(--orange-accent);">SSB PR United</span></h2>
+        <div class="section-sub">Tim pelatih profesional berlisensi PSSI yang berdedikasi membina generasi emas sepakbola Palangka Raya.</div>
+
+        <!-- Head Coach -->
+        <div style="display: flex; justify-content: center; margin-bottom: 3rem;">
+            <div class="coach-card-head">
+                <div class="coach-avatar-head">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--red-dark);">Sugianto</h3>
+                <span class="coach-badge-head">Head Coach</span>
+            </div>
+        </div>
+
+        <!-- Assistant Coaches -->
+        <div class="cards-grid">
+            <div class="card">
+                <div class="coach-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Robinsen</h3>
+                <p style="color: #5a6e55; font-weight: 500;">Coach</p>
+            </div>
+            <div class="card">
+                <div class="coach-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Irwan Mahsyuri</h3>
+                <p style="color: #5a6e55; font-weight: 500;">Coach</p>
+            </div>
+            <div class="card">
+                <div class="coach-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Deni Apriadi</h3>
+                <p style="color: #5a6e55; font-weight: 500;">Coach</p>
+            </div>
+            <div class="card">
+                <div class="coach-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Rafael Kevin</h3>
+                <p style="color: #5a6e55; font-weight: 500;">Coach</p>
+            </div>
+            <div class="card">
+                <div class="coach-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Jeriel Bisatria</h3>
+                <p style="color: #5a6e55; font-weight: 500;">Coach</p>
+            </div>
+            <div class="card">
+                <div class="coach-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Fidel Juan Sebastian</h3>
+                <p style="color: #5a6e55; font-weight: 500;">Coach</p>
+            </div>
         </div>
     </section>
 

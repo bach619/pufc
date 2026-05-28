@@ -1,0 +1,9 @@
+# Robots.txt untuk SSB Palangka Raya United FC
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ssb-palangkaraya-united.vercel.app/sitemap.xml
+
+# Crawl delay (untuk beban server)
+Crawl-delay: 10

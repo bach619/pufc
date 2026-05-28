@@ -3,13 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>SSB Palangka Raya United Football Club | Akademi Sepakbola Muda</title>
+
+  <!-- SEO: Primary -->
+  <title>SSB Palangka Raya United FC | Akademi Sepakbola Muda Palangka Raya</title>
+  <meta name="description" content="SSB Palangka Raya United Football Club — akademi sepakbola anak usia 6-17 tahun di Palangka Raya, Kalimantan Tengah. Daftar sekarang! Latihan di Stadion Sanaman Mantikei." />
+  <meta name="keywords" content="SSB Palangka Raya, akademi sepakbola Palangka Raya, sekolah sepakbola Kalimantan Tengah, PR United FC, sepakbola anak Palangka Raya, latihan sepakbola Palangkaraya" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="SSB Palangka Raya United Football Club" />
+  <meta name="geo.region" content="ID-KT" />
+  <meta name="geo.placename" content="Palangka Raya" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ssb-palangkaraya-united.vercel.app/" />
+
+  <!-- Icons -->
   <link rel="icon" type="image/x-icon" href="/asset/favicon.ico" />
+  <link rel="apple-touch-icon" href="/asset/logo.webp" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ssb-palangkaraya-united.vercel.app/" />
+  <meta property="og:title" content="SSB Palangka Raya United FC | Akademi Sepakbola Muda" />
+  <meta property="og:description" content="Akademi sepakbola untuk usia 6-17 tahun di Palangka Raya. Latihan di Stadion Sanaman Mantikei. Bergabunglah!" />
+  <meta property="og:image" content="https://ssb-palangkaraya-united.vercel.app/asset/hero.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="SSB Palangka Raya United FC" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SSB Palangka Raya United FC | Akademi Sepakbola Muda" />
+  <meta name="twitter:description" content="Akademi sepakbola untuk usia 6-17 tahun di Palangka Raya. Latihan di Stadion Sanaman Mantikei." />
+  <meta name="twitter:image" content="https://ssb-palangkaraya-united.vercel.app/asset/hero.webp" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "SSB Palangka Raya United Football Club",
+    "alternateName": "PR United FC",
+    "description": "Akademi sepakbola muda untuk usia 6-17 tahun di Palangka Raya, Kalimantan Tengah. Melatih teknik dasar, taktik, dan karakter juara.",
+    "url": "https://ssb-palangkaraya-united.vercel.app/",
+    "logo": "https://ssb-palangkaraya-united.vercel.app/asset/logo.webp",
+    "image": "https://ssb-palangkaraya-united.vercel.app/asset/hero.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Stadion Sanaman Mantikei, Jalan Ahmad Yani",
+      "addressLocality": "Palangka Raya",
+      "addressRegion": "Kalimantan Tengah",
+      "addressCountry": "ID"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-822-5669-3226",
+      "contactType": "customer service",
+      "whatsApp": "+62-822-5669-3226"
+    },
+    "knowsLanguage": "id",
+    "foundingDate": "2020-09-24",
+    "legalName": "PS. PALANGKARAYA UTAMA PUTERA KALIMANTAN TENGAH",
+    "sport": "Soccer",
+    "areaServed": {
+      "@type": "City",
+      "name": "Palangka Raya"
+    }
+  }
+  </script>
+
+  <!-- WebSite Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SSB Palangka Raya United Football Club",
+    "url": "https://ssb-palangkaraya-united.vercel.app/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ssb-palangkaraya-united.vercel.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Preconnect to speed up external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Performance: preload hero image -->
+  <link rel="preload" as="image" href="/asset/hero.webp" />
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Fallback: if JS fails to load, show a basic message -->
+  <noscript>
+    <div style="padding:2rem;text-align:center;font-family:sans-serif;">
+      <h2>SSB Palangka Raya United Football Club</h2>
+      <p>Akademi sepakbola muda di Palangka Raya, Kalimantan Tengah.</p>
+      <p>Untuk pengalaman lengkap, aktifkan JavaScript pada browser Anda.</p>
+      <p>Hubungi kami via WhatsApp: <a href="https://wa.me/6282256693226">+62 822 5669 3226</a></p>
+    </div>
+  </noscript>
 </body>
 </html>

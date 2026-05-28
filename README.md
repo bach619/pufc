@@ -71,6 +71,7 @@ Project tersedia dalam **dua versi**:
 | **@tailwindcss/vite** | ^4.0.0 | Vite plugin untuk Tailwind |
 | **Font Awesome** | 6.x | Ikon (via CDN) |
 | **Google Fonts (Inter)** | — | Tipografi utama |
+| **Sharp** | ^0.34.5 | Optimasi gambar (konversi WebP) |
 
 ---
 
@@ -78,38 +79,48 @@ Project tersedia dalam **dua versi**:
 
 ```
 pufc/
-├── asset/
-│   ├── hero.png            # Gambar hero
-│   └── logo.jpg            # Logo klub
+├── asset/                  # Gambar statis (hero, logo, favicon)
+│   ├── hero.png
+│   ├── hero.webp
+│   └── logo.jpg
+├── public/                 # File publik (otomatis ke dist/)
+│   ├── robots.txt          # Panduan crawler Google
+│   └── sitemap.xml         # Daftar URL untuk indexing
+├── scripts/
+│   └── prerender.mjs       # Post-build: render React ke HTML statis (SSR)
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.jsx      # Navigasi utama
 │   │   ├── Hero.jsx        # Bagian hero/home
 │   │   ├── About.jsx       # Tentang akademi
+│   │   ├── LegalDocs.jsx   # Dokumen legalitas (accordion)
 │   │   ├── Programs.jsx    # Program latihan
 │   │   ├── Schedule.jsx    # Jadwal latihan
 │   │   ├── Registration.jsx# Form pendaftaran
 │   │   ├── Contact.jsx     # Kontak & lokasi
 │   │   └── Footer.jsx      # Footer
 │   ├── App.jsx             # Komponen utama (merangkai semua bagian)
-│   ├── main.jsx            # Entry point React
+│   ├── main.jsx            # Entry point client (dev & prod)
+│   ├── entry-server.jsx    # Entry point server (untuk SSR prerender)
 │   └── index.css           # Gaya global + Tailwind
-├── index.html              # Entry point HTML (React)
-├── index-full.html         # Versi HTML statis mandiri
+├── index.html              # Entry point HTML (React + meta SEO)
+├── index-full.html         # Versi HTML statis mandiri (dengan meta SEO)
 ├── style.css               # Gaya untuk versi statis
 ├── package.json            # Dependensi dan skrip
 ├── vite.config.js          # Konfigurasi Vite
+├── vercel.json             # Konfigurasi deploy Vercel
 └── README.md               # Dokumentasi ini
 ```
 
-### Alur Data
+### Alur Data (Client-side)
 
 ```
-main.jsx
+main.jsx (entry-client)
   └── App.jsx
         ├── Navbar
         ├── Hero
         ├── About
+        ├── LegalDocs
         ├── Programs
         ├── Schedule
         ├── Registration  (state lokal → WhatsApp API)
@@ -119,6 +130,20 @@ main.jsx
 
 - `Registration.jsx` mengelola state form dengan `useState` dan mengirim data melalui `window.open` ke URL WhatsApp.
 - Tidak ada *backend server* — semua statis, pendaftaran dikirim langsung ke nomor admin.
+
+### Alur Build (Production)
+
+```
+npm run build
+  ├── Vite build → dist/ (client bundle: index.html + JS + CSS)
+  └── postbuild → scripts/prerender.mjs
+        ├── Vite SSR load → entry-server.jsx
+        ├── renderToString(App) → HTML string
+        └── Inject HTML ke dist/index.html → Final HTML with content
+```
+
+- Saat production, Googlebot melihat konten penuh langsung di HTML (tidak perlu menjalankan JavaScript).
+- Browser tetap mengaktifkan React hydration untuk interaktivitas (form, smooth scroll, menu mobile).
 
 ---
 
@@ -164,6 +189,11 @@ const WA_NUMBER = '6282256693226'   // Ganti dengan nomor admin
 npm run build
 ```
 
+Proses build mencakup dua tahap:
+
+1. **Vite build** — Mengompilasi React + Tailwind ke file statis di `dist/`
+2. **Prerender (postbuild)** — Menjalankan `scripts/prerender.mjs` yang menggunakan Vite SSR untuk merender konten React ke HTML statis. Hasilnya, Googlebot langsung melihat konten penuh tanpa harus menjalankan JavaScript.
+
 Hasil build akan berada di folder `dist/`. File siap di-*deploy* ke hosting statis seperti Vercel, Netlify, atau GitHub Pages.
 
 Untuk melihat hasil build secara lokal:
@@ -171,6 +201,85 @@ Untuk melihat hasil build secara lokal:
 ```bash
 npm run preview
 ```
+
+---
+
+## Search Engine Optimization (SEO)
+
+Website ini telah dioptimasi untuk mesin pencari dengan strategi berikut:
+
+### ✅ Teknis SEO
+
+| Komponen | Status | Keterangan |
+|----------|--------|------------|
+| **Meta Tags** | ✅ | `title`, `description`, `keywords`, `robots`, `author`, geo tags |
+| **Open Graph** | ✅ | `og:title`, `og:description`, `og:image`, `og:locale` untuk Facebook & LinkedIn |
+| **Twitter Card** | ✅ | `summary_large_image` untuk tampilan kaya di Twitter/X |
+| **Canonical URL** | ✅ | Mencegah duplikat konten |
+| **JSON-LD Structured Data** | ✅ | `SportsOrganization` + `WebSite` schema untuk rich snippet di Google |
+| **robots.txt** | ✅ | Mengarahkan crawler ke sitemap |
+| **sitemap.xml** | ✅ | Memberi tahu Google tentang URL website |
+| **SSR Prerendering** | ✅ | Konten React dirender ke HTML statis saat build |
+| **Responsive Design** | ✅ | Mobile-friendly (faktor ranking Google) |
+| **Semantic HTML** | ✅ | Heading hierarchy (`h1` → `h2` → `h3`) yang benar |
+| **Alt Text** | ✅ | Semua gambar memiliki `alt` deskriptif |
+| **Lazy Loading** | ✅ | Gambar menggunakan `loading="lazy"` |
+| **WebP Images** | ✅ | Format modern dengan kompresi 80% kualitas |
+
+### 📍 Lokal SEO (Palangka Raya / Kalimantan Tengah)
+
+- Nama, alamat, nomor telepon (NAP) konsisten di semua halaman
+- Geo meta tags: `geo.region` (ID-KT), `geo.placename` (Palangka Raya)
+- Google Maps embed dengan alamat Stadion Sanaman Mantikei
+- Struktur data `SportsOrganization` dengan alamat lengkap
+- Konten dioptimasi dengan keyword lokal: "SSB Palangka Raya", "sepakbola Kalimantan Tengah", "akademi sepakbola Palangkaraya"
+
+### ⚡ Performa
+
+- Font preloading via `<link rel="preconnect">` untuk Google Fonts & CDN
+- Hero image di-preload dengan `<link rel="preload">`
+- Ikon Font Awesome via CDN (cache terdistribusi)
+- Gambar dikonversi ke WebP saat build (plugin `optimizeImages`)
+- Minifikasi CSS/JS otomatis oleh Vite
+
+### 🚀 Setup Google Search Console
+
+Setelah deploy, lakukan langkah berikut:
+
+1. Buka [Google Search Console](https://search.google.com/search-console)
+2. Tambahkan properti dengan URL website (contoh: `https://ssb-palangkaraya-united.vercel.app/`)
+3. Verifikasi kepemilikan (Vercel: tambahkan TXT record DNS atau upload file HTML)
+4. Kirim sitemap: `https://ssb-palangkaraya-united.vercel.app/sitemap.xml`
+5. Pantau performa di tab Performance & Index
+
+### 📊 Google Analytics (Opsional)
+
+Untuk memasang Google Analytics:
+
+1. Buat properti di [Google Analytics](https://analytics.google.com/)
+2. Dapatkan ID pengukuran (contoh: `G-XXXXXXXXXX`)
+3. Tambahkan script berikut di `<head>` `index.html`:
+
+```html
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+```
+
+### 🔍 Verifikasi SEO dengan Tools
+
+| Tools | URL | Kegunaan |
+|-------|-----|----------|
+| Google PageSpeed Insights | https://pagespeed.web.dev/ | Ukur performa & Core Web Vitals |
+| Google Rich Results Test | https://search.google.com/test/rich-results | Validasi JSON-LD structured data |
+| Google Mobile-Friendly Test | https://search.google.com/test/mobile-friendly | Cek responsivitas |
+| Ahrefs Webmaster Tools | https://ahrefs.com/webmaster-tools | Audit SEO gratis |
+| Schema.org Validator | https://validator.schema.org/ | Validasi structured data |
 
 ---
 

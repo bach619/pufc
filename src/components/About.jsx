@@ -23,7 +23,7 @@ export default function About() {
         Tentang <span className="text-orange-accent">SSB PUFC</span>
       </h2>
       <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-12">
-        Didirikan dengan visi membina generasi emas sepakbola Palangka Raya, mengedepankan karakter dan skill.
+        Didirikan dengan visi membina generasi emas sepakbola <strong>Palangka Raya</strong>, mengedepankan karakter dan skill. <strong>SSB PR United</strong> adalah akademi sepakbola resmi binaan <strong>Pemkot Palangka Raya</strong>, berlisensi PSSI, dan telah mencetak banyak pemain muda berbakat dari Kalimantan Tengah.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -45,7 +45,7 @@ export default function About() {
         <p className="italic max-w-2xl mx-auto text-lg">
           &ldquo;Sepakbola bukan hanya soal menang, tapi juga membangun masa depan anak-anak kita. Di PR United, setiap anak adalah pemain inti.&rdquo;
         </p>
-        <p className="mt-3 font-bold">&mdash; Pelatih Kepala, Coach Prabu</p>
+        <p className="mt-3 font-bold">&mdash; Pelatih Kepala, Sugianto</p>
       </div>
 
       {/* Legal notice */}

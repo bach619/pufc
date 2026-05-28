@@ -16,6 +16,7 @@ export default function Navbar() {
   const links = [
     { href: '#home', label: 'Beranda' },
     { href: '#about', label: 'Tentang' },
+    { href: '#coaches', label: 'Pelatih' },
     { href: '#programs', label: 'Program' },
     { href: '#schedule', label: 'Jadwal' },
     { href: '#registration', label: 'Daftar' },

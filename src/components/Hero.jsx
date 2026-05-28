@@ -7,10 +7,10 @@ export default function Hero() {
             <i className="fas fa-futbol mr-1"></i> Akademi Sepakbola Muda
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-red-dark leading-tight mb-4">
-            Cetak Bintang Lapangan <br /> Sejak Dini
+            SSB Palangka Raya United — Cetak Bintang Lapangan Sejak Dini
           </h1>
           <p className="text-lg text-[#2e4a2b] mb-8 max-w-xl">
-            SSB Palangka Raya United Football Club &mdash; tempat anak-anak berkembang melalui sepakbola, disiplin, sportivitas, dan kebersamaan. Bergabunglah bersama keluarga besar sepakbola Kalimantan Tengah!
+            <strong>SSB Palangka Raya United Football Club (PR United FC)</strong> — sekolah sepakbola dan akademi sepakbola muda terbaik di Palangka Raya, Kalimantan Tengah. Tempat anak-anak usia 6–17 tahun berkembang melalui sepakbola, disiplin, sportivitas, dan kebersamaan. Bergabunglah bersama keluarga besar sepakbola Kalimantan Tengah!
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a

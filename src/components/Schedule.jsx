@@ -35,7 +35,7 @@ export default function Schedule() {
         Jadwal <span className="text-orange-accent">Latihan</span>
       </h2>
       <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-8">
-        Lokasi: Stadion Sanaman Mantikei, Jalan Ahmad Yani, Palangkaraya
+        Lokasi: <strong>Stadion Sanaman Mantikei</strong>, Jalan Ahmad Yani, <strong>Palangka Raya</strong> — satu-satunya SSB di Palangka Raya yang menggunakan stadion utama untuk latihan rutin.
       </p>
 
       {/* Info box */}
