@@ -64,7 +64,7 @@ export default function Coaches() {
             className="bg-white rounded-3xl p-6 shadow-[0_10px_20px_rgba(0,0,0,0.05)] border border-[#e2f0dc] text-center hover:-translate-y-2 hover:shadow-[0_20px_30px_-12px_rgba(46,125,50,0.2)] transition-all"
           >
             <div className="w-20 h-20 bg-[#fff1e0] rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-user-graduate text-3xl text-orange-accent"></i>
+              <i className="fas fa-whistle text-3xl text-orange-accent"></i>
             </div>
             <h3 className="text-xl font-semibold mb-1">{coach.name}</h3>
             <span className="text-sm font-medium text-[#5a6e55]">{coach.role}</span>
