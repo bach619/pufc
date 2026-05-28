@@ -13,7 +13,7 @@ const coaches = [
     role: 'Coach',
   },
   {
-    name: 'Deni Apriadi',
+    name: 'Deni Setiawan',
     role: 'Coach',
   },
   {
