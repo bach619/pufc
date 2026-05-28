@@ -47,6 +47,31 @@ export default function About() {
         </p>
         <p className="mt-3 font-bold">&mdash; Pelatih Kepala, Coach Prabu</p>
       </div>
+
+      {/* Legal notice */}
+      <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 bg-white rounded-3xl p-5 border border-[#d4e8cc] shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="inline-flex items-center gap-1.5 bg-[#1c2e1a] text-[#ffd966] text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+            <i className="fas fa-shield-alt"></i>
+            Legal
+          </span>
+          <span className="text-sm text-[#4a5e47]">
+            Terdaftar sebagai badan hukum:{' '}
+            <strong>PS. Palangkaraya Utama Putera Kalimantan Tengah</strong>
+          </span>
+        </div>
+        <a
+          href="#legal-docs"
+          onClick={(e) => {
+            e.preventDefault()
+            const target = document.querySelector('#legal-docs')
+            if (target) target.scrollIntoView({ behavior: 'smooth' })
+          }}
+          className="text-sm font-semibold text-orange-accent hover:text-orange-hover underline underline-offset-2 whitespace-nowrap"
+        >
+          Lihat Dokumen Legalitas <i className="fas fa-arrow-right ml-1 text-xs"></i>
+        </a>
+      </div>
     </section>
   )
 }

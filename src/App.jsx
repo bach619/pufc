@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import LegalDocs from './components/LegalDocs'
 import Programs from './components/Programs'
 import Schedule from './components/Schedule'
 import Registration from './components/Registration'
@@ -14,6 +15,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <LegalDocs />
         <Programs />
         <Schedule />
         <Registration />
