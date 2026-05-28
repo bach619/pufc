@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="mt-5 text-sm">
-          &copy; 2026 SSB Palangka Raya United Football Club |{' '}
+          &copy; 2026 SSB Palangka Raya United Football Club |developed by Boby Mihing{' '}
           <a
             href="#home"
             onClick={(e) => {
