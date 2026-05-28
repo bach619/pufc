@@ -27,11 +27,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between py-3">
         {/* Logo */}
         <a href="#home" onClick={(e) => handleNav(e, '#home')} className="flex items-center gap-3">
-          <img
-            src="/asset/logo.jpg"
-            alt="Logo Palangka Raya United"
-            className="h-[55px] w-auto rounded-xl bg-white p-1 shadow-sm object-contain"
-          />
+          <picture>
+            <source srcSet="/asset/logo.webp" type="image/webp" />
+            <img
+              src="/asset/logo.jpg"
+              alt="Logo Palangka Raya United"
+              className="h-[55px] w-auto rounded-xl bg-white p-1 shadow-sm object-contain"
+            />
+          </picture>
           <div className="leading-tight">
             <span className="font-extrabold text-lg text-red-dark block">PALANGKA RAYA</span>
             <span className="text-sm font-medium text-orange-accent block">UNITED CLUB</span>

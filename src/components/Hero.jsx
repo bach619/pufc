@@ -1,5 +1,3 @@
-import heroImg from '@asset/hero.png'
-
 export default function Hero() {
   return (
     <section id="home" className="bg-[linear-gradient(105deg,#fef2f2_0%,#fee2e2_100%)] px-4 sm:px-8 py-12 relative overflow-hidden">
@@ -40,11 +38,15 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex-1 text-center">
-          <img
-            src={heroImg}
-            alt="Anak latihan sepakbola"
-            className="max-w-full rounded-3xl shadow-[0_25px_35px_-12px_rgba(0,0,0,0.2)] object-cover bg-red-dark"
-          />
+          <picture>
+            <source srcSet="/asset/hero.webp" type="image/webp" />
+            <img
+              src="/asset/hero.png"
+              alt="Anak latihan sepakbola"
+              className="max-w-full rounded-3xl shadow-[0_25px_35px_-12px_rgba(0,0,0,0.2)] object-cover bg-red-dark"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
     </section>

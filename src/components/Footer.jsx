@@ -4,11 +4,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto text-center">
         {/* Logo & Brand */}
         <div className="flex items-center justify-center gap-3 mb-4">
-          <img
-            src="/asset/logo.jpg"
-            alt="logo"
-            className="h-11 bg-white rounded-full p-1"
-          />
+          <picture>
+            <source srcSet="/asset/logo.webp" type="image/webp" />
+            <img
+              src="/asset/logo.jpg"
+              alt="logo"
+              className="h-11 bg-white rounded-full p-1"
+            />
+          </picture>
           <span className="font-extrabold text-[#ffd966]">PALANGKA RAYA UNITED</span>
         </div>
         <p className="text-sm"><i className="fas fa-futbol mr-1"></i> Membangun generasi sepakbola berkarakter & berprestasi.</p>
