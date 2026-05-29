@@ -1,16 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { tsParticles } from '@tsparticles/engine'
-import { loadSlim } from '@tsparticles/slim'
-
-// Module-level flag: engine hanya di-load sekali (bukan per mount)
-let engineLoaded = false
-
-async function ensureEngine() {
-  if (!engineLoaded) {
-    await loadSlim(tsParticles)
-    engineLoaded = true
-  }
-}
+import { useEffect, useRef } from 'react'
 
 const particlesOptions = {
   fullScreen: false,
@@ -95,20 +83,18 @@ const particlesOptions = {
 
 export default function ParticlesBackground() {
   const containerRef = useRef(null)
-  const [ready, setReady] = useState(false)
 
   useEffect(() => {
+    const tsParticles = globalThis.tsParticles
+    if (!tsParticles) {
+      console.warn('[Particles] tsParticles tidak tersedia di window')
+      return
+    }
+
     let cancelled = false
     let instance = null
 
     const start = async () => {
-      try {
-        await ensureEngine()
-      } catch (err) {
-        console.error('[Particles] Gagal load engine:', err)
-        return
-      }
-
       if (cancelled || !containerRef.current) return
 
       try {
@@ -116,7 +102,6 @@ export default function ParticlesBackground() {
           id: 'tsparticles-bg',
           options: particlesOptions,
         })
-        setReady(true)
       } catch (err) {
         console.error('[Particles] Gagal load partikel:', err)
       }
