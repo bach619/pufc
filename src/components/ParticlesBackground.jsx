@@ -1,5 +1,16 @@
-import { Particles, ParticlesProvider } from '@tsparticles/react'
+import { useEffect, useRef, useState } from 'react'
+import { tsParticles } from '@tsparticles/engine'
 import { loadSlim } from '@tsparticles/slim'
+
+// Module-level flag: engine hanya di-load sekali (bukan per mount)
+let engineLoaded = false
+
+async function ensureEngine() {
+  if (!engineLoaded) {
+    await loadSlim(tsParticles)
+    engineLoaded = true
+  }
+}
 
 const particlesOptions = {
   fullScreen: false,
@@ -10,9 +21,7 @@ const particlesOptions = {
       value: 20,
       density: { enable: true, width: 1920, height: 1080 },
     },
-    shape: {
-      type: 'circle',
-    },
+    shape: { type: 'circle' },
     size: {
       value: { min: 4, max: 8 },
       animation: {
@@ -31,9 +40,7 @@ const particlesOptions = {
         sync: false,
       },
     },
-    color: {
-      value: '#f57c00',
-    },
+    color: { value: '#f57c00' },
     move: {
       enable: true,
       speed: 0.4,
@@ -48,9 +55,6 @@ const particlesOptions = {
       color: '#f57c00',
       opacity: 0.15,
       width: 1,
-    },
-    collisions: {
-      enable: false,
     },
   },
   interactivity: {
@@ -69,9 +73,7 @@ const particlesOptions = {
       },
     },
   },
-  background: {
-    color: 'transparent',
-  },
+  background: { color: 'transparent' },
   responsive: [
     {
       maxWidth: 768,
@@ -92,21 +94,57 @@ const particlesOptions = {
 }
 
 export default function ParticlesBackground() {
+  const containerRef = useRef(null)
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+    let instance = null
+
+    const start = async () => {
+      try {
+        await ensureEngine()
+      } catch (err) {
+        console.error('[Particles] Gagal load engine:', err)
+        return
+      }
+
+      if (cancelled || !containerRef.current) return
+
+      try {
+        instance = await tsParticles.load({
+          id: 'tsparticles-bg',
+          options: particlesOptions,
+        })
+        setReady(true)
+      } catch (err) {
+        console.error('[Particles] Gagal load partikel:', err)
+      }
+    }
+
+    start()
+
+    return () => {
+      cancelled = true
+      if (instance) {
+        try { instance.destroy() } catch (_) { /* ignore */ }
+      }
+    }
+  }, [])
+
   return (
-    <ParticlesProvider init={loadSlim}>
-      <Particles
-        id="tsparticles-bg"
-        options={particlesOptions}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 0,
-          pointerEvents: 'none',
-        }}
-      />
-    </ParticlesProvider>
+    <div
+      ref={containerRef}
+      id="tsparticles-bg"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: 0,
+        pointerEvents: 'none',
+      }}
+    />
   )
 }
