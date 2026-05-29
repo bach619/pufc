@@ -20,113 +20,134 @@ export default function ParticlesBackground() {
     let instance = null
 
     const start = async () => {
-      await ensureEngine()
+      try {
+        await ensureEngine()
+      } catch (err) {
+        console.error('[Particles] Gagal load engine:', err)
+        return
+      }
+
       if (cancelled || !containerRef.current) return
 
-      instance = await tsParticles.load({
-        id: 'tsparticles-bg',
-        options: {
-          fullScreen: false,
-          detectRetina: true,
-          fpsLimit: 60,
-          particles: {
-            number: {
-              value: 20,
-              density: { enable: true, width: 1920, height: 1080 },
-            },
-            shape: {
-              type: 'image',
-              image: {
-                src: '/asset/soccer-ball.svg',
-                width: 100,
-                height: 100,
+      try {
+        instance = await tsParticles.load({
+          id: 'tsparticles-bg',
+          options: {
+            fullScreen: false,
+            detectRetina: true,
+            fpsLimit: 60,
+            particles: {
+              number: {
+                value: 18,
+                density: { enable: true, width: 1920, height: 1080 },
               },
-            },
-            size: {
-              value: { min: 28, max: 72 },
-              animation: {
-                enable: true,
-                speed: 2,
-                minimumValue: 20,
-                sync: false,
+              shape: {
+                type: 'image',
+                image: {
+                  src: '/asset/soccer-ball.svg',
+                  width: 100,
+                  height: 100,
+                },
               },
-            },
-            opacity: {
-              value: 0.18,
-              animation: {
+              size: {
+                value: { min: 32, max: 64 },
+                animation: {
+                  enable: true,
+                  speed: 2,
+                  minimumValue: 24,
+                  sync: false,
+                },
+              },
+              opacity: {
+                value: 0.35,
+                animation: {
+                  enable: true,
+                  speed: 0.6,
+                  minimumValue: 0.18,
+                  sync: false,
+                },
+              },
+              color: {
+                value: '#f57c00',
+                animation: {
+                  enable: true,
+                  speed: 20,
+                  sync: false,
+                },
+              },
+              move: {
                 enable: true,
                 speed: 0.5,
-                minimumValue: 0.08,
-                sync: false,
+                direction: 'none',
+                random: true,
+                straight: false,
+                outModes: { default: 'bounce' },
               },
-            },
-            move: {
-              enable: true,
-              speed: 0.6,
-              direction: 'none',
-              random: true,
-              straight: false,
-              outModes: { default: 'bounce' },
-            },
-            rotate: {
-              value: { min: 0, max: 360 },
-              animation: {
-                enable: true,
-                speed: 1.2,
-                sync: false,
-              },
-            },
-            collisions: {
-              enable: true,
-              mode: 'bounce',
-            },
-            wobble: {
-              enable: true,
-              distance: 8,
-              speed: 4,
-            },
-          },
-          interactivity: {
-            detectsOn: 'window',
-            events: {
-              onHover: {
-                enable: true,
-                mode: 'repulse',
-              },
-            },
-            modes: {
-              repulse: {
-                distance: 120,
-                duration: 0.4,
-                speed: 1,
-              },
-            },
-          },
-          background: {
-            color: 'transparent',
-          },
-          responsive: [
-            {
-              maxWidth: 768,
-              options: {
-                particles: {
-                  number: { value: 8 },
-                  size: { value: { min: 20, max: 45 } },
-                  move: { speed: 0.4 },
-                  opacity: { value: 0.12 },
-                  rotate: { animation: { speed: 0.8 } },
-                  wobble: { enable: false },
+              rotate: {
+                value: { min: 0, max: 360 },
+                animation: {
+                  enable: true,
+                  speed: 1.0,
+                  sync: false,
                 },
-                interactivity: {
-                  events: {
-                    onHover: { enable: false },
+              },
+              collisions: {
+                enable: true,
+                mode: 'bounce',
+              },
+              wobble: {
+                enable: true,
+                distance: 6,
+                speed: 3,
+              },
+            },
+            interactivity: {
+              detectsOn: 'window',
+              events: {
+                onHover: {
+                  enable: true,
+                  mode: 'repulse',
+                },
+              },
+              modes: {
+                repulse: {
+                  distance: 120,
+                  duration: 0.4,
+                  speed: 1,
+                },
+              },
+            },
+            background: {
+              color: 'transparent',
+            },
+            responsive: [
+              {
+                maxWidth: 768,
+                options: {
+                  particles: {
+                    number: { value: 8 },
+                    size: { value: { min: 22, max: 42 } },
+                    move: { speed: 0.35 },
+                    opacity: { value: 0.25 },
+                    color: { animation: { enable: false } },
+                    wobble: { enable: false },
+                  },
+                  interactivity: {
+                    events: {
+                      onHover: { enable: false },
+                    },
                   },
                 },
               },
-            },
-          ],
-        },
-      })
+            ],
+          },
+        })
+        if (process.env.NODE_ENV === 'development') {
+          console.log('[Particles] Container loaded:', instance?.id?.description)
+        }
+      } catch (err) {
+        console.error('[Particles] Gagal load partikel:', err)
+      }
     }
 
     start()
@@ -134,7 +155,11 @@ export default function ParticlesBackground() {
     return () => {
       cancelled = true
       if (instance) {
-        instance.destroy()
+        try {
+          instance.destroy()
+        } catch (err) {
+          // ignore cleanup errors
+        }
       }
     }
   }, [])

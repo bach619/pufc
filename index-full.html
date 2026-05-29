@@ -1272,17 +1272,25 @@ border-bottom: 1px solid #f0e4e4;
                         },
                     },
                     opacity: {
-                        value: 0.18,
+                        value: 0.35,
                         animation: {
                             enable: true,
-                            speed: 0.5,
-                            minimumValue: 0.08,
+                            speed: 0.6,
+                            minimumValue: 0.18,
+                            sync: false,
+                        },
+                    },
+                    color: {
+                        value: '#f57c00',
+                        animation: {
+                            enable: true,
+                            speed: 20,
                             sync: false,
                         },
                     },
                     move: {
                         enable: true,
-                        speed: 0.6,
+                        speed: 0.5,
                         direction: 'none',
                         random: true,
                         straight: false,
@@ -1292,7 +1300,7 @@ border-bottom: 1px solid #f0e4e4;
                         value: { min: 0, max: 360 },
                         animation: {
                             enable: true,
-                            speed: 1.2,
+                            speed: 1.0,
                             sync: false,
                         },
                     },
@@ -1302,8 +1310,8 @@ border-bottom: 1px solid #f0e4e4;
                     },
                     wobble: {
                         enable: true,
-                        distance: 8,
-                        speed: 4,
+                        distance: 6,
+                        speed: 3,
                     },
                 },
                 interactivity: {
@@ -1332,10 +1340,10 @@ border-bottom: 1px solid #f0e4e4;
                         options: {
                             particles: {
                                 number: { value: 8 },
-                                size: { value: { min: 20, max: 45 } },
-                                move: { speed: 0.4 },
-                                opacity: { value: 0.12 },
-                                rotate: { animation: { speed: 0.8 } },
+                                size: { value: { min: 22, max: 42 } },
+                                move: { speed: 0.35 },
+                                opacity: { value: 0.25 },
+                                color: { animation: { enable: false } },
                                 wobble: { enable: false },
                             },
                             interactivity: {
