@@ -153,7 +153,11 @@ export default function Navbar() {
         <ul
           className={`${
             open ? 'flex' : 'hidden'
-          } md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-white/95 backdrop-blur-lg md:bg-transparent p-6 md:p-0 gap-2 md:gap-1 items-center list-none rounded-b-2xl shadow-lg md:shadow-none z-40`}
+          } md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto md:bg-transparent p-6 md:p-0 gap-2 md:gap-1 items-center list-none rounded-b-2xl shadow-lg md:shadow-none z-40 ${
+            isDark
+              ? 'bg-[#1a1a2e]/95 backdrop-blur-lg'
+              : 'bg-white/95 backdrop-blur-lg'
+          }`}
         >
           {NAV_ITEMS.map((link) => {
             const isLinkActive = activeId === link.href
@@ -170,7 +174,7 @@ export default function Navbar() {
                           ? 'bg-red-primary text-white shadow-md'
                           : 'bg-white/20 text-white shadow-md'
                       : isDark
-                        ? 'text-white/80 hover:bg-white/15 hover:text-white'
+                        ? 'text-white/70 hover:bg-white/15 hover:text-white'
                         : isLight
                           ? 'text-[#2c3a2b] hover:bg-red-primary/10 hover:text-red-primary'
                           : 'text-white/90 hover:bg-white/15 hover:text-white'
@@ -181,7 +185,11 @@ export default function Navbar() {
               </li>
             )
           })}
-          <li className="w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-gray-200 md:border-none">
+          <li
+            className={`w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 ${
+              isDark ? 'border-white/10' : 'border-gray-200'
+            }`}
+          >
             <a
               href="#registration"
               onClick={(e) => handleNav(e, '#registration')}
