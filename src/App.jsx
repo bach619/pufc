@@ -1,6 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import ParticlesBackground from './components/ParticlesBackground'
 import ScrollReveal from './components/ScrollReveal'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -17,7 +16,6 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <>
-      <ParticlesBackground />
       <div className="relative z-10 font-sans text-text-dark min-h-screen">
         <Analytics />
         <SpeedInsights />

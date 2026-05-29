@@ -60,7 +60,6 @@
       "areaServed": { "@type": "City", "name": "Palangka Raya" }
     }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -74,16 +73,6 @@
             color: #1e2a1f;
             scroll-behavior: smooth;
             line-height: 1.5;
-        }
-
-        #particles-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
         }
 
         #app-content {
@@ -817,7 +806,6 @@ border-bottom: 1px solid #f0e4e4;
 </head>
 <body>
 
-<div id="particles-bg"></div>
 <div id="app-content">
 
 <header class="navbar">
@@ -1240,92 +1228,6 @@ border-bottom: 1px solid #f0e4e4;
         if (e.key === 'ArrowLeft') prevImage();
     });
 
-    // ─── tsParticles Background ────────────────────────────────────────────
-    if (typeof tsParticles !== 'undefined') {
-        tsParticles.load({
-            id: 'particles-bg',
-            options: {
-                fullScreen: false,
-                detectRetina: true,
-                fpsLimit: 60,
-                particles: {
-                    number: {
-                        value: 20,
-                        density: { enable: true, width: 1920, height: 1080 },
-                    },
-                    shape: { type: 'circle' },
-                    size: {
-                        value: { min: 4, max: 8 },
-                        animation: {
-                            enable: true,
-                            speed: 3,
-                            minimumValue: 2,
-                            sync: false,
-                        },
-                    },
-                    opacity: {
-                        value: 0.5,
-                        animation: {
-                            enable: true,
-                            speed: 0.8,
-                            minimumValue: 0.2,
-                            sync: false,
-                        },
-                    },
-                    color: { value: '#f57c00' },
-                    move: {
-                        enable: true,
-                        speed: 0.4,
-                        direction: 'none',
-                        random: true,
-                        straight: false,
-                        outModes: { default: 'bounce' },
-                    },
-                    links: {
-                        enable: true,
-                        distance: 150,
-                        color: '#f57c00',
-                        opacity: 0.15,
-                        width: 1,
-                    },
-                },
-                interactivity: {
-                    detectsOn: 'window',
-                    events: {
-                        onHover: {
-                            enable: true,
-                            mode: 'repulse',
-                        },
-                    },
-                    modes: {
-                        repulse: {
-                            distance: 100,
-                            duration: 0.4,
-                            speed: 1,
-                        },
-                    },
-                },
-                background: { color: 'transparent' },
-                responsive: [
-                    {
-                        maxWidth: 768,
-                        options: {
-                            particles: {
-                                number: { value: 10 },
-                                size: { value: { min: 3, max: 6 } },
-                                move: { speed: 0.3 },
-                                opacity: { value: 0.35 },
-                                links: { enable: false },
-                            },
-                            interactivity: {
-                                events: { onHover: { enable: false } },
-                            },
-                        },
-                    },
-                ],
-            },
-        })
-    }
 </script>
 </body>
 </html>
