@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const NAV_ITEMS = [
   { href: '#home', label: 'Beranda' },
@@ -13,31 +13,45 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [pastHero, setPastHero] = useState(false)
   const [activeId, setActiveId] = useState('#home')
+  const activeRef = useRef(activeId)
+  activeRef.current = activeId
 
-  // Track scroll position for shadow + active link
+  // ——— scroll logic ———
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 40)
+    const check = () => {
+      const hero = document.querySelector('#home')
+      if (hero) {
+        const rect = hero.getBoundingClientRect()
+        // pastHero = hero's bottom edge has scrolled above the viewport top
+        setPastHero(rect.bottom <= 0)
+      }
 
-      // Determine which section is in view
+      // active link — read latest via ref to avoid stale closure
       const sections = NAV_ITEMS.map(({ href }) => {
         const el = document.querySelector(href)
         if (!el) return { id: href, top: 0, bottom: 0 }
-        const rect = el.getBoundingClientRect()
-        return { id: href, top: rect.top, bottom: rect.bottom }
+        const r = el.getBoundingClientRect()
+        return { id: href, top: r.top, bottom: r.bottom }
       })
-
-      // The offset from top to consider a section "active"
       const OFFSET = 120
       const current = sections.find((s) => s.top <= OFFSET && s.bottom > 0)
-      if (current) setActiveId(current.id)
+      if (current && current.id !== activeRef.current) {
+        setActiveId(current.id)
+      }
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    // Run immediately + after a rAF to catch browser hash-scroll
+    check()
+    const raf = requestAnimationFrame(check)
+
+    window.addEventListener('scroll', check, { passive: true })
+    return () => {
+      cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', check)
+    }
+  }, []) // empty deps — only mount/unmount
 
   const handleNav = (e, id) => {
     e.preventDefault()
@@ -50,14 +64,24 @@ export default function Navbar() {
     }
   }
 
+  // ——— colour modes ———
+  const transparent = !pastHero // stays transparent while hero is still visible
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        pastHero
           ? 'bg-white/80 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.08)]'
-          : 'bg-white/60 backdrop-blur-sm'
+          : 'bg-transparent'
       }`}
     >
+      {/* Subtle bottom-border that fades in on scroll */}
+      <div
+        className={`absolute bottom-0 left-0 right-0 h-[1px] transition-opacity duration-500 ${
+          pastHero ? 'opacity-100' : 'opacity-0'
+        } bg-gradient-to-r from-transparent via-gray-200 to-transparent`}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between py-3">
         {/* Logo */}
         <a href="#home" onClick={(e) => handleNav(e, '#home')} className="flex items-center gap-3 shrink-0">
@@ -70,14 +94,28 @@ export default function Navbar() {
             />
           </picture>
           <div className="leading-tight hidden sm:block">
-            <span className="font-extrabold text-lg text-red-dark block">PALANGKA RAYA</span>
-            <span className="text-sm font-medium text-orange-accent block">UNITED CLUB</span>
+            <span
+              className={`font-extrabold text-lg block transition-colors duration-300 ${
+                transparent ? 'text-white' : 'text-red-dark'
+              }`}
+            >
+              PALANGKA RAYA
+            </span>
+            <span
+              className={`text-sm font-medium block transition-colors duration-300 ${
+                transparent ? 'text-[#ffd966]' : 'text-orange-accent'
+              }`}
+            >
+              UNITED CLUB
+            </span>
           </div>
         </a>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-2xl text-red-primary cursor-pointer p-2"
+          className={`md:hidden text-2xl cursor-pointer p-2 transition-colors duration-300 ${
+            transparent ? 'text-white' : 'text-red-primary'
+          }`}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -99,8 +137,12 @@ export default function Navbar() {
                   onClick={(e) => handleNav(e, link.href)}
                   className={`block md:inline-block px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 no-underline text-center ${
                     isActive
-                      ? 'bg-red-primary text-white shadow-md'
-                      : 'text-[#2c3a2b] hover:bg-red-primary/10 hover:text-red-primary'
+                      ? transparent
+                        ? 'bg-white/20 text-white shadow-md'
+                        : 'bg-red-primary text-white shadow-md'
+                      : transparent
+                        ? 'text-white/90 hover:bg-white/15 hover:text-white'
+                        : 'text-[#2c3a2b] hover:bg-red-primary/10 hover:text-red-primary'
                   }`}
                 >
                   {link.label}
@@ -112,7 +154,11 @@ export default function Navbar() {
             <a
               href="#registration"
               onClick={(e) => handleNav(e, '#registration')}
-              className="block md:inline-block text-center border-2 border-red-primary text-red-primary font-bold px-6 py-2 rounded-full hover:bg-red-primary hover:text-white transition-all no-underline"
+              className={`block md:inline-block text-center font-bold px-6 py-2 rounded-full transition-all no-underline ${
+                transparent
+                  ? 'border-2 border-white text-white hover:bg-white hover:text-red-dark'
+                  : 'border-2 border-red-primary text-red-primary hover:bg-red-primary hover:text-white'
+              }`}
             >
               Join Now
             </a>

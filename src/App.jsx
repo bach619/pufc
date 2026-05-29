@@ -22,7 +22,7 @@ export default function App() {
         <Analytics />
         <SpeedInsights />
         <Navbar />
-        <main className="pt-[74px]">
+        <main>
           <Hero />
           <ScrollReveal><About /></ScrollReveal>
           <Stats />

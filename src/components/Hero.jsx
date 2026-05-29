@@ -1,6 +1,9 @@
+import ParticlesBg from './ParticlesBg'
+
 export default function Hero() {
   return (
-    <section id="home" className="relative px-4 sm:px-8 py-12 overflow-hidden bg-[linear-gradient(135deg,#b71c1c_0%,#d32f2f_40%,#e53935_70%,#ef5350_100%)]">
+    <section id="home" className="relative px-4 sm:px-8 min-h-screen flex items-center overflow-hidden bg-[linear-gradient(135deg,#b71c1c_0%,#d32f2f_40%,#e53935_70%,#ef5350_100%)]">
+      <ParticlesBg />
       {/* Decorative background elements */}
       <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
       <div className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] rounded-full bg-orange-accent/10 blur-3xl" />

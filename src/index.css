@@ -22,7 +22,7 @@
 /* Smooth scroll + offset for sticky navbar (~80px) */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 100px;
 }
 
 /* Custom animations */
