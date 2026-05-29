@@ -4,6 +4,7 @@ import ScrollReveal from './components/ScrollReveal'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Stats from './components/Stats'
 import Coaches from './components/Coaches'
 import LegalDocs from './components/LegalDocs'
 import Programs from './components/Programs'
@@ -12,6 +13,7 @@ import Schedule from './components/Schedule'
 import Registration from './components/Registration'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 export default function App() {
   return (
@@ -20,9 +22,10 @@ export default function App() {
         <Analytics />
         <SpeedInsights />
         <Navbar />
-        <main>
+        <main className="pt-[74px]">
           <Hero />
           <ScrollReveal><About /></ScrollReveal>
+          <Stats />
           <ScrollReveal><Coaches /></ScrollReveal>
           <ScrollReveal><LegalDocs /></ScrollReveal>
           <ScrollReveal><Programs /></ScrollReveal>
@@ -33,6 +36,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <WhatsAppButton />
     </>
   )
 }
