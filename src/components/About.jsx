@@ -7,7 +7,7 @@ const aboutCards = [
   {
     icon: 'fa-chalkboard-user',
     title: 'Pelatih Lisensi',
-    desc: 'Didampingi pelatih profesional berlisensi PSSI dan berpengalaman di akademi muda.',
+    desc: 'Dipimpin pelatih kepala berlisensi PSSI dan didukung tim pelatih berpengalaman.',
   },
   {
     icon: 'fa-hand-fist',
@@ -23,7 +23,7 @@ export default function About() {
         Tentang <span className="text-orange-accent">SSB PUFC</span>
       </h2>
       <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-12">
-        Didirikan dengan visi membina generasi emas sepakbola <strong>Palangka Raya</strong>, mengedepankan karakter dan skill. <strong>SSB PR United</strong> adalah akademi sepakbola resmi binaan <strong>Pemkot Palangka Raya</strong>, berlisensi PSSI, dan telah mencetak banyak pemain muda berbakat dari Kalimantan Tengah.
+        Didirikan dengan visi membina generasi emas sepakbola <strong>Palangka Raya</strong>, mengedepankan karakter dan skill. <strong>SSB PR United</strong> adalah akademi sepakbola yang berkomitmen mencetak pemain muda berbakat dari Kalimantan Tengah.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

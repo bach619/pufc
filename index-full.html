@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>SSB Palangka Raya United FC | Akademi Sepakbola Muda Palangka Raya</title>
     <meta name="description" content="SSB Palangka Raya United Football Club — akademi sepakbola anak usia 6-17 tahun di Palangka Raya, Kalimantan Tengah. Daftar sekarang! Latihan di Stadion Sanaman Mantikei.">
-    <meta name="keywords" content="SSB Palangka Raya, akademi sepakbola Palangka Raya, sekolah sepakbola Kalimantan Tengah, PR United FC, sepakbola anak Palangka Raya, latihan sepakbola Palangkaraya">
+    <meta name="keywords" content="SSB Palangka Raya, akademi sepakbola Palangka Raya, sekolah sepakbola Kalimantan Tengah, PR United FC, sepakbola anak Palangka Raya, latihan sepakbola Palangkaraya, sekolah sepakbola Kalimantan Tengah, SSB terbaik Palangka Raya">
     <meta name="robots" content="index, follow">
     <meta name="author" content="SSB Palangka Raya United Football Club">
     <meta name="geo.region" content="ID-KT">
     <meta name="geo.placename" content="Palangka Raya">
+    <meta name="geo.position" content="-2.2167;113.9167">
+    <meta name="ICBM" content="-2.2167, 113.9167">
+    <meta name="theme-color" content="#d32f2f">
+    <meta name="application-name" content="SSB PR United FC">
     <link rel="canonical" href="https://www.pufc-palangkaraya.sbs/">
     <link rel="icon" type="image/x-icon" href="/asset/favicon.ico">
     <!-- Open Graph -->
@@ -669,6 +673,146 @@ border-bottom: 1px solid #f0e4e4;
                 padding: 3rem 1rem;
             }
         }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 28px -8px rgba(0,0,0,0.15);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-image {
+            max-width: 95%;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            background: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            font-size: 2.2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+            line-height: 1;
+        }
+        .lightbox-close:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            font-size: 1.6rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        .lightbox-nav:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        .lightbox-prev { left: 1rem; }
+        .lightbox-next { right: 1rem; }
+        .lightbox-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            background: rgba(0,0,0,0.5);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
+            text-align: center;
+            max-width: 90%;
+        }
+        .lightbox-counter {
+            position: absolute;
+            top: 1rem;
+            left: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            background: rgba(0,0,0,0.4);
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+            .gallery-item img {
+                height: 180px;
+            }
+            .lightbox-nav {
+                width: 36px;
+                height: 36px;
+                font-size: 1.2rem;
+            }
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -692,6 +836,7 @@ border-bottom: 1px solid #f0e4e4;
             <li><a href="#about">Tentang</a></li>
             <li><a href="#coaches">Pelatih</a></li>
             <li><a href="#programs">Program</a></li>
+            <li><a href="#gallery">Galeri</a></li>
             <li><a href="#schedule">Jadwal</a></li>
             <li><a href="#registration">Daftar</a></li>
             <li><a href="#contact">Kontak</a></li>
@@ -728,7 +873,7 @@ border-bottom: 1px solid #f0e4e4;
             <div class="card">
                 <i class="fas fa-chalkboard-user"></i>
                 <h3>Pelatih Lisensi</h3>
-                <p>Didampingi pelatih profesional berlisensi PSSI dan berpengalaman di akademi muda.</p>
+                <p>Dipimpin pelatih kepala berlisensi PSSI dan didukung tim pelatih berpengalaman.</p>
             </div>
             <div class="card">
                 <i class="fas fa-hand-fist"></i>
@@ -745,13 +890,13 @@ border-bottom: 1px solid #f0e4e4;
 
     <section id="coaches" class="section">
         <h2 class="section-title">Pelatih <span style="color: var(--orange-accent);">SSB PR United</span></h2>
-        <div class="section-sub">Tim pelatih profesional berlisensi PSSI yang berdedikasi membina generasi emas sepakbola Palangka Raya.</div>
+        <div class="section-sub">Dipimpin pelatih kepala berlisensi PSSI yang berdedikasi membina generasi emas sepakbola Palangka Raya.</div>
 
         <!-- Head Coach -->
         <div style="display: flex; justify-content: center; margin-bottom: 3rem;">
             <div class="coach-card-head">
-                <div class="coach-avatar-head">
-                    <i class="fas fa-crown"></i>
+                <div class="coach-avatar-head" style="background: linear-gradient(135deg, #d32f2f, #b71c1c); box-shadow: 0 4px 12px rgba(183,28,28,0.3); ring: 4px solid rgba(255,217,102,0.4);">
+                    <span style="font-size: 2rem; font-weight: 800; color: #ffd966;">S</span>
                 </div>
                 <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--red-dark);">Sugianto</h3>
                 <span class="coach-badge-head">Head Coach</span>
@@ -761,43 +906,43 @@ border-bottom: 1px solid #f0e4e4;
         <!-- Assistant Coaches -->
         <div class="cards-grid">
             <div class="card">
-                <div class="coach-avatar">
-                    <i class="fas fa-futbol"></i>
+                <div class="coach-avatar" style="background: linear-gradient(135deg, #10b981, #0d9488);">
+                    <span style="font-size: 1.4rem; font-weight: 800; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">R</span>
                 </div>
                 <h3>Robinsen</h3>
                 <p style="color: #5a6e55; font-weight: 500;">Coach</p>
             </div>
             <div class="card">
-                <div class="coach-avatar">
-                    <i class="fas fa-futbol"></i>
+                <div class="coach-avatar" style="background: linear-gradient(135deg, #3b82f6, #4f46e5);">
+                    <span style="font-size: 1.4rem; font-weight: 800; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">IM</span>
                 </div>
                 <h3>Irwan Mahsyuri</h3>
                 <p style="color: #5a6e55; font-weight: 500;">Coach</p>
             </div>
             <div class="card">
-                <div class="coach-avatar">
-                    <i class="fas fa-futbol"></i>
+                <div class="coach-avatar" style="background: linear-gradient(135deg, #f59e0b, #ea580c);">
+                    <span style="font-size: 1.4rem; font-weight: 800; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">DS</span>
                 </div>
-                <h3>Deni Apriadi</h3>
+                <h3>Deni Setiawan</h3>
                 <p style="color: #5a6e55; font-weight: 500;">Coach</p>
             </div>
             <div class="card">
-                <div class="coach-avatar">
-                    <i class="fas fa-futbol"></i>
+                <div class="coach-avatar" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+                    <span style="font-size: 1.4rem; font-weight: 800; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">RK</span>
                 </div>
                 <h3>Rafael Kevin</h3>
                 <p style="color: #5a6e55; font-weight: 500;">Coach</p>
             </div>
             <div class="card">
-                <div class="coach-avatar">
-                    <i class="fas fa-futbol"></i>
+                <div class="coach-avatar" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                    <span style="font-size: 1.4rem; font-weight: 800; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">JB</span>
                 </div>
                 <h3>Jeriel Bisatria</h3>
                 <p style="color: #5a6e55; font-weight: 500;">Coach</p>
             </div>
             <div class="card">
-                <div class="coach-avatar">
-                    <i class="fas fa-futbol"></i>
+                <div class="coach-avatar" style="background: linear-gradient(135deg, #06b6d4, #0284c7);">
+                    <span style="font-size: 1.4rem; font-weight: 800; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">FJS</span>
                 </div>
                 <h3>Fidel Juan Sebastian</h3>
                 <p style="color: #5a6e55; font-weight: 500;">Coach</p>
@@ -826,6 +971,39 @@ border-bottom: 1px solid #f0e4e4;
             </div>
         </div>
     </section>
+
+    <!-- Galeri Prestasi -->
+    <section id="gallery" class="section" style="background: #f5f0f0; border-radius: 48px 48px 0 0;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span style="display: inline-block; background: #f57c00; color: white; font-weight: 700; font-size: 0.7rem; padding: 0.35rem 1.2rem; border-radius: 30px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">Prestasi</span>
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Juara <span style="color: #f57c00;">ASC Super Copa 2023</span></h2>
+            <p style="text-align: center; color: #5a6e55; max-width: 600px; margin: 0 auto;">Palangka Raya United FC berhasil meraih gelar juara pada ajang ASC Super Copa 2023. Dokumentasi perjalanan tim dari pertandingan hingga momen kemenangan.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/gallery/1.jpeg" alt="Tim ASC Super Copa 2023" loading="lazy" onclick="openLightbox(0)">
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery/2.jpeg" alt="Momen pertandingan ASC Super Copa 2023" loading="lazy" onclick="openLightbox(1)">
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery/3.jpeg" alt="Perayaan juara ASC Super Copa 2023" loading="lazy" onclick="openLightbox(2)">
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery/4.jpeg" alt="Penyerahan piala ASC Super Copa 2023" loading="lazy" onclick="openLightbox(3)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()" role="dialog" aria-modal="true">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Tutup">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); prevImage()" aria-label="Sebelumnya">&#10094;</button>
+        <img id="lightbox-img" class="lightbox-image" alt="">
+        <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); nextImage()" aria-label="Selanjutnya">&#10095;</button>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
 
     <!-- Jadual-->
     <section id="schedule" class="section">
@@ -962,7 +1140,6 @@ border-bottom: 1px solid #f0e4e4;
     </div>
     <p><i class="fas fa-futbol"></i> Membangun generasi sepakbola berkarakter & berprestasi.</p>
     <p style="margin-top: 0.8rem;">&copy; 2026 SSB Palangka Raya United Football Club | <a href="#home">Kembali ke Atas</a></p>
-    <p style="font-size: 0.75rem; margin-top: 1rem;">Sekolah Sepakbola resmi binaan Pemkot Palangka Raya</p>
 </footer>
 
 </div>
@@ -1011,6 +1188,56 @@ border-bottom: 1px solid #f0e4e4;
                 history.pushState(null, null, targetId);
             }
         });
+    });
+
+    // ─── Lightbox Gallery ──────────────────────────────────────────────────
+    const galleryImages = [
+        { src: '/gallery/1.jpeg', label: 'Tim ASC Super Copa 2023' },
+        { src: '/gallery/2.jpeg', label: 'Momen pertandingan ASC Super Copa 2023' },
+        { src: '/gallery/3.jpeg', label: 'Perayaan juara ASC Super Copa 2023' },
+        { src: '/gallery/4.jpeg', label: 'Penyerahan piala ASC Super Copa 2023' },
+    ];
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+
+    function openLightbox(index) {
+        currentIndex = index;
+        showImage();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function showImage() {
+        const img = galleryImages[currentIndex];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.label;
+        lightboxCaption.textContent = img.label;
+        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        showImage();
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage();
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
     });
 
     // ─── tsParticles Background: Soccer Balls ────────────────────────────

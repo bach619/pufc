@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import ParticlesBackground from './components/ParticlesBackground'
+import ScrollReveal from './components/ScrollReveal'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -23,14 +24,14 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
-          <About />
-          <Coaches />
-          <LegalDocs />
-          <Programs />
-          <Gallery />
-          <Schedule />
-          <Registration />
-          <Contact />
+          <ScrollReveal><About /></ScrollReveal>
+          <ScrollReveal><Coaches /></ScrollReveal>
+          <ScrollReveal><LegalDocs /></ScrollReveal>
+          <ScrollReveal><Programs /></ScrollReveal>
+          <ScrollReveal><Gallery /></ScrollReveal>
+          <ScrollReveal><Schedule /></ScrollReveal>
+          <ScrollReveal><Registration /></ScrollReveal>
+          <ScrollReveal><Contact /></ScrollReveal>
         </main>
         <Footer />
       </div>

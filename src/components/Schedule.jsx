@@ -46,9 +46,9 @@ export default function Schedule() {
         <strong>SEMUA KELOMPOK USIA</strong> (6–17 tahun).
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
-        <table className="schedule-table w-full border-collapse bg-white rounded-2xl overflow-hidden text-sm">
+      {/* Desktop Table — hidden on small screens */}
+      <div className="hidden md:block rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+        <table className="w-full border-collapse bg-white rounded-2xl overflow-hidden text-sm">
           <thead>
             <tr className="bg-gradient-to-r from-red-primary to-red-dark">
               <th className="text-white font-bold text-xs uppercase tracking-wider px-5 py-4 text-left">Hari</th>
@@ -60,26 +60,51 @@ export default function Schedule() {
           <tbody>
             {scheduleData.map((s, i) => (
               <tr key={i} className="border-b border-[#e8f0e4] hover:bg-[#f5faf2] transition-colors last:border-none">
-                <td data-label="Hari" className="px-5 py-4 align-middle">
+                <td className="px-5 py-4 align-middle">
                   <span className={`inline-block font-extrabold text-sm px-4 py-1.5 rounded-full text-white min-w-[90px] text-center ${badgeColors[s.badgeClass]}`}>
                     {s.day}
                   </span>
                 </td>
-                <td data-label="Kelompok" className="px-5 py-4 align-middle">
+                <td className="px-5 py-4 align-middle">
                   {s.group} <span className="text-xs text-[#7a8f75]">(semua kelompok)</span>
                 </td>
-                <td data-label="Waktu" className="px-5 py-4 align-middle">
+                <td className="px-5 py-4 align-middle">
                   <span className="font-bold text-red-primary bg-[#edf7ea] px-3.5 py-1 rounded-full text-sm whitespace-nowrap">
                     {s.time}
                   </span>
                 </td>
-                <td data-label="Materi" className="px-5 py-4 align-middle font-semibold text-[#2c3a2b]">
+                <td className="px-5 py-4 align-middle font-semibold text-[#2c3a2b]">
                   {s.material}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile Cards — shown only on small screens */}
+      <div className="md:hidden space-y-4">
+        {scheduleData.map((s, i) => (
+          <div
+            key={i}
+            className="bg-white rounded-2xl p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)] border border-[#e2f0dc]"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className={`inline-block font-extrabold text-sm px-4 py-1.5 rounded-full text-white ${badgeColors[s.badgeClass]}`}>
+                {s.day}
+              </span>
+              <span className="text-xs text-[#7a8f75] font-medium">{s.group}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-[#4a5e47] mb-2">
+              <i className="fas fa-clock text-orange-accent text-xs"></i>
+              <span className="font-bold text-red-primary">{s.time}</span>
+            </div>
+            <div className="flex items-start gap-2 text-sm text-[#4a5e47]">
+              <i className="fas fa-futbol text-orange-accent text-xs mt-0.5"></i>
+              <span className="font-semibold text-[#2c3a2b]">{s.material}</span>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="text-center mt-8 text-sm text-[#5a6e55] space-y-2">
