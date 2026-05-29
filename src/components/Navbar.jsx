@@ -25,7 +25,7 @@ function themeFor(id) {
 }
 
 // ——— shared style helpers ———
-const darkHeader  = 'bg-[#1a1a2e]/85 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.25)]'
+const darkHeader  = 'bg-[#1a1a2e] backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.25)]'
 const lightHeader = 'bg-white/80 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.08)]'
 
 export default function Navbar() {
@@ -155,7 +155,7 @@ export default function Navbar() {
             open ? 'flex' : 'hidden'
           } md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto md:bg-transparent p-6 md:p-0 gap-2 md:gap-1 items-center list-none rounded-b-2xl shadow-lg md:shadow-none z-40 ${
             isDark
-              ? 'bg-[#1a1a2e]/95 backdrop-blur-lg'
+              ? 'bg-[#1a1a2e] backdrop-blur-lg'
               : 'bg-white/95 backdrop-blur-lg'
           }`}
         >
