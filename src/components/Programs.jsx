@@ -28,7 +28,7 @@ export default function Programs() {
         </h2>
         <p className="text-center text-[#5a6e55] max-w-2xl mx-auto mb-12">
           Kami membagi kelompok usia agar setiap anak mendapatkan porsi latihan sesuai perkembangan motorik dan taktik.{' '}
-          <strong>Semua kelompok mengikuti Jadualyang sama: Rabu, Jumat, Minggu pukul 14.30 WIB.</strong>
+          <strong>Semua kelompok mengikuti jadwal yang sama: Rabu, Jumat, Minggu pukul 14.30 WIB.</strong>
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
