@@ -111,10 +111,10 @@ export default function Navbar() {
             <img
               src="/asset/logo.jpg"
               alt="Logo Palangka Raya United"
-              className="h-[50px] w-auto rounded-xl bg-white p-1 shadow-sm object-contain"
+              className="h-[40px] sm:h-[50px] w-auto rounded-xl bg-white p-1 shadow-sm object-contain"
             />
           </picture>
-          <div className="leading-tight hidden sm:block">
+          <div className="leading-tight block">
             <span
               className={`font-extrabold text-lg block transition-colors duration-300 ${
                 isDark ? 'text-white'

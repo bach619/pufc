@@ -18,7 +18,7 @@ export default function Hero() {
         backgroundSize: '50px 50px',
       }} />
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10 mt-16 sm:mt-0">
         <div className="flex-1">
           <span className="inline-block bg-[#ffd966] text-red-dark font-bold text-sm px-4 py-1 rounded-full mb-4">
             <i className="fas fa-futbol mr-1"></i> Akademi Sepakbola Muda
