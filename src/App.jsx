@@ -18,7 +18,21 @@ import CookiePolicy from './components/CookiePolicy'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 
-export default function App() {
+export default function App({ initialPage }) {
+  // On client, read page from data attribute (set by prerender.mjs) to match SSR
+  const page = initialPage
+
+  if (page === 'privacy') {
+    return <PrivacyPolicy standalone />
+  }
+  if (page === 'terms') {
+    return <TermsOfService standalone />
+  }
+  if (page === 'cookies') {
+    return <CookiePolicy standalone />
+  }
+
+  // ── landing page (home) ──
   return (
     <>
       <div className="relative z-10 font-sans text-text-dark min-h-screen">
@@ -36,9 +50,6 @@ export default function App() {
           <ScrollReveal><Schedule /></ScrollReveal>
           <ScrollReveal><Registration /></ScrollReveal>
           <ScrollReveal><Contact /></ScrollReveal>
-          <PrivacyPolicy />
-          <TermsOfService />
-          <CookiePolicy />
         </main>
         <Footer />
       </div>

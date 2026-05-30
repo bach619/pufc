@@ -4,9 +4,13 @@ import './index.css'
 import App from './App'
 
 const rootElement = document.getElementById('root')
+
+// Determine initial page from data-page attribute (set by prerender.mjs)
+const initialPage = rootElement?.dataset?.page || 'home'
+
 const app = (
   <StrictMode>
-    <App />
+    <App initialPage={initialPage} />
   </StrictMode>
 )
 

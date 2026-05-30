@@ -3,9 +3,12 @@ import { hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
 
+const rootElement = document.getElementById('root')
+const initialPage = rootElement?.dataset?.page || 'home'
+
 hydrateRoot(
-  document.getElementById('root'),
+  rootElement,
   <StrictMode>
-    <App />
+    <App initialPage={initialPage} />
   </StrictMode>,
 )
