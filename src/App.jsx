@@ -12,6 +12,9 @@ import Gallery from './components/Gallery'
 import Schedule from './components/Schedule'
 import Registration from './components/Registration'
 import Contact from './components/Contact'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import TermsOfService from './components/TermsOfService'
+import CookiePolicy from './components/CookiePolicy'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 
@@ -33,6 +36,9 @@ export default function App() {
           <ScrollReveal><Schedule /></ScrollReveal>
           <ScrollReveal><Registration /></ScrollReveal>
           <ScrollReveal><Contact /></ScrollReveal>
+          <PrivacyPolicy />
+          <TermsOfService />
+          <CookiePolicy />
         </main>
         <Footer />
       </div>

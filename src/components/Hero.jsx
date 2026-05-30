@@ -21,13 +21,13 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10 mt-16 sm:mt-0">
         <div className="flex-1">
           <span className="inline-block bg-[#ffd966] text-red-dark font-bold text-sm px-4 py-1 rounded-full mb-4">
-            <i className="fas fa-futbol mr-1"></i> Akademi Sepakbola Muda
+            <i className="fas fa-futbol mr-1"></i> Sekolah Sepakbola Muda
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg">
             SSB Palangka Raya United — Cetak Bintang Lapangan Sejak Dini
           </h1>
           <p className="text-lg text-white/85 mb-8 max-w-xl drop-shadow">
-            <strong>SSB Palangka Raya United Football Club (PR United FC)</strong> — sekolah sepakbola dan akademi sepakbola muda terbaik di Palangka Raya, Kalimantan Tengah. Tempat anak-anak usia 6–17 tahun berkembang melalui sepakbola, disiplin, sportivitas, dan kebersamaan. Bergabunglah bersama keluarga besar sepakbola Kalimantan Tengah!
+            <strong>SSB Palangka Raya United Football Club (PUFC)</strong> — sekolah sepakbola dan akademi sepakbola muda terbaik di Palangka Raya, Kalimantan Tengah. Tempat anak-anak usia 6–17 tahun berkembang melalui sepakbola, disiplin, sportivitas, dan kebersamaan. Bergabunglah bersama keluarga besar sepakbola Kalimantan Tengah!
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a

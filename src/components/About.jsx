@@ -2,7 +2,7 @@ const aboutCards = [
   {
     icon: 'fa-trophy',
     title: 'Prestasi & Pembinaan',
-    desc: 'Lebih dari 50 medali tingkat provinsi & nasional. Metode latihan modern sesuai kategori usia.',
+    desc: 'Lebih dari 15 medali tingkat provinsi & nasional. Metode latihan modern sesuai kategori usia.',
   },
   {
     icon: 'fa-chalkboard-user',

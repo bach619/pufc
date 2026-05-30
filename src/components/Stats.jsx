@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 
 const stats = [
-  { icon: 'fa-trophy', value: 50, suffix: '+', label: 'Medali', sub: 'Tingkat Provinsi & Nasional' },
-  { icon: 'fa-users', value: 200, suffix: '+', label: 'Siswa', sub: 'Pemain Muda Binaan' },
+  { icon: 'fa-trophy', value: 15, suffix: '+', label: 'Medali', sub: 'Tingkat Provinsi & Nasional' },
+  { icon: 'fa-users', value: 40, suffix: '+', label: 'Siswa', sub: 'Pemain Muda Binaan' },
   { icon: 'fa-chalkboard-user', value: 7, suffix: '', label: 'Pelatih', sub: 'Berpengalaman & Profesional' },
   { icon: 'fa-layer-group', value: 3, suffix: '', label: 'Program', sub: 'Kelompok Usia 6-17 Tahun' },
 ]
